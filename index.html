@@ -11,46 +11,103 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:500|Shadows+Into+Light+Two" rel="stylesheet">
 
   <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <body>
 
   <!-- Overall Bootstrap Grid -->
-  <!-- Jumbotron with Title -->
-  <div class="jumbotron">
-    <h1 class="text-center"><strong>It's MY Closet, Mom!</strong></h1>
-    <h4 class="text-center"></h4>
-    <hr>
-    <div class="text-center">
+<div class="container">
+<div class="row">
+    <div class="col-lg-3">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div>
+          <form class="form-inline text-center">
+            <input class="form-control" id="pac-input" type="text" placeholder="Location" aria-label="Search">
+            <!-- Enter Geolocator Icon here -->
+          </form>
+        </div>
+        <div class="text-center">
+          <input class="btn btn-primary" type="button" value="Today">
+          <input class="btn btn-primary" type="submit" value="Next Day">
+          <input class="btn btn-primary" type="reset" value="3-Day  ">
+      </nav>
     </div>
 
-  </div>
-  <div class="container">
-    <div class="row">
+    <div class="col-lg-9">
+            <h1 class="display-1 text-center">It's MY Closet, Mom!</h1>
+    </div>
+</div>
 
-<!-- Left Panel - Weather & allergen results here  -->
-      <div class="col-lg-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Weather Results</h3>
-            <p id="city-area">for the city of ___________ </p>
-          </div>
-          <div class="panel-body">
-            <div class="text-center">
 
-            </div>
-          </div>
+  <div class="row">
+    <!-- Left Panel - Weather & allergen results here  -->
+    <div class="col-lg-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Weather Results</h3>
+          <p id="city-area">for the city of ___________ </p>
+        </div>
+        <div class="panel-body">
+
         </div>
       </div>
+    </div>
 
-<!-- Game centeral: Dress Me! with Weather Apprpriate clothes-->
-        <div class="col-lg-8">
-          <div class="panel-heading">
-            <h3 class="panel-title">Game Area</h3>
+
+    <!-- Game centeral: Dress Me! with Weather Apprpriate clothes-->
+    <div class="col-lg-9">
+      <div class="panel-heading">
+        <h3 class="panel-title">Game Area</h3>
+      </div>
+      <div class="row">
+          <div class="col-lg-2">
+            <p>placeholder</p>
+          </div>
+          <div class="col-lg-8">
+            <div class="text-center">
+              <p>placeholder</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <p>placeholder</p>
           </div>
         </div>
+
+          <div class="row">
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+              <div class="col-lg-8">
+                <div class="text-center">
+                  <p>placeholder</p>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+            </div>
+
+          <div class="row">
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+              <div class="col-lg-8">
+                <div class="text-center">
+                  <p>placeholder</p>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+          </div>
   </div>
+
+</div>
+
+  <script src="game.js"></script>
 </body>
+
 </html>
