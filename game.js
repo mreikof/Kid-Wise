@@ -1,3 +1,5 @@
+// First day weather tracker
+
 $("#today").on("click", function(event) {
   event.preventDefault();
 
@@ -17,7 +19,7 @@ $("#today").on("click", function(event) {
 
   });
 });
-// Second Day
+// Second Day Weather Tracker
 $("#tmrw").on("click", function(event) {
   event.preventDefault();
 
@@ -26,10 +28,6 @@ $("#tmrw").on("click", function(event) {
   $("#city-area").text(city);
   $("#location").text(city);
   var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&appid=166a433c57516f51dfab1f7edaed8413";
-
-// function getWeather() {
-//
-//   var queryURL = "http://api.wunderground.com/api/3f793d9c699917ce/conditions/q/" + lat + "," + long + ".json";
 
   $.ajax({
     url: queryURL,
@@ -42,7 +40,8 @@ $("#tmrw").on("click", function(event) {
 
   });
 });
-// Third Day
+
+// Third Day Weather Tracker
 $("#third").on("click", function(event) {
   event.preventDefault();
 
@@ -61,10 +60,6 @@ $("#third").on("click", function(event) {
     $("#air-desc").text("Humidity: " + response.list[2].humidity + "%");
 
   });
-    // console.log(response.current_observation.UV);
-    // console.log(response.current_observation.temp_f);
-    // console.log(response.current_observation.weather);
-    // console.log(response.current_observation.forecast_url);
 
 });
 
