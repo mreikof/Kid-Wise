@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>It's MY Closet, Mom!</title>
+
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:500|Shadows+Into+Light+Two" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Overall Bootstrap Grid -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <div>
+            <code>
+              <form class="form-inline">
+                <input class="form-control" id="pac-input" type="text" placeholder="Location" aria-label="Search">
+                <img src="me-icon.png" class="img-responsive" id="find-me" alt="Responsive image">
+              </form>
+            </code>
+          </div>
+          <div class="text-center">
+            <input class="btn btn-primary" type="button" value="Today">
+            <input class="btn btn-primary" type="submit" value="Next Day">
+            <input class="btn btn-primary" type="reset" value="3-Day  ">
+        </nav>
+        </div>
+
+        <div class="col-lg-9">
+          <h1 class="display-1 text-center">It's MY Closet, Mom!</h1>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <!-- Left Panel - Weather & allergen results here  -->
+        <div class="col-lg-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Weather Results</h3>
+              <p id="city-area">for the city of ___________ </p>
+            </div>
+            <div class="panel-body text-center">
+              <div class="temp area">
+                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+                <h5 id="location"> Austin, Tx </h5>
+              </div>
+              <div class="forecast area">
+                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+                <h5 id="forecast-desc"> Warm, Sunny </h5>
+              </div>
+              <div class="air area">
+                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+                <h5 id="air-desc"> Good </h5>
+              </div>
+              <div class="allergies area">
+                <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+                <h5 id="pollen-desc"> Pollen Count: High </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sign Up</h3>
+          </div>
+          <form>
+              <div class="form-group">
+                <label for="name">What is your name?</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-check">
+                <h3> Which gender are you? </h3>
+                <label class="form-check-label" id="girl">
+                   <input type="image" src="smiling-girl.png" alt="" id="img-clck">  <br>
+                  I'm a GIRL!
+                </label>
+                <label class="form-check-label" id="boy">
+                   <input type="image" src="boy-broad-smile.png" alt="" id="img-clck"> <br>
+                  I'm a BOY!
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="startDate">Where do you live?</label>
+                <input type="text" class="form-control" id="cityState" placeholder="City, State">
+
+              </div>
+              <button type="submit" class="btn btn-primary" id="submit">Personalize Me!</button>
+              </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
