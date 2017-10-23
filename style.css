@@ -22,3 +22,9 @@ p {
 .padme {
   padding: 10px 0 10px
 }
+
+#find-me {
+  width: 25px;
+  height: auto;
+  float: right;
+}
