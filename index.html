@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>It's MY Closet, Mom!</title>
+
+  <!-- Bootstrap File -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:500|Shadows+Into+Light+Two" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Overall Bootstrap Grid -->
+<div class="container">
+<div class="row">
+    <div class="col-lg-3">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div>
+          <form class="form-inline text-center">
+            <input class="form-control" id="pac-input" type="text" placeholder="Location" aria-label="Search">
+            <!-- Enter Geolocator Icon here -->
+          </form>
+        </div>
+        <div class="text-center">
+          <input class="btn btn-primary" type="button" value="Today">
+          <input class="btn btn-primary" type="submit" value="Next Day">
+          <input class="btn btn-primary" type="reset" value="3-Day  ">
+      </nav>
+    </div>
+
+    <div class="col-lg-9">
+            <h1 class="display-1 text-center">It's MY Closet, Mom!</h1>
+    </div>
+</div>
+
+
+  <div class="row">
+    <!-- Left Panel - Weather & allergen results here  -->
+    <div class="col-lg-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Weather Results</h3>
+          <p id="city-area">for the city of ___________ </p>
+        </div>
+        <div class="panel-body text-center">
+          <div class="temp area">
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+            <h5 id="location"> Austin, Tx </h5>
+          </div>
+          <div class="forecast area">
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+            <h5 id="forecast-desc"> Warm, Sunny </h5>
+          </div>
+          <div class="air area">
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+            <h5 id="air-desc"> Good </h5>
+          </div>
+          <div class="allergies area">
+            <a href="https://placeholder.com"><img src="http://via.placeholder.com/140x100"></a>
+            <h5 id="pollen-desc"> Pollen Count: High </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Game centeral: Dress Me! with Weather Apprpriate clothes-->
+    <div class="col-lg-9">
+      <div class="panel-heading">
+        <h3 class="panel-title">Game Area</h3>
+      </div>
+      <div class="row">
+          <div class="col-lg-2">
+            <div>
+            <h4 class="text-center">Placeholder Title</h4>
+            <p class="text-center">Azores high barograph blowing sand ceilometer cooling degree day cumuliform d-value flash flood foehn freezing precipitation.</p>
+            <h4 class="text-center">Placeholder Title</h4>
+            <p class="text-center">Azores high barograph blowing sand ceilometer cooling degree day cumuliform d-value flash flood foehn freezing precipitation.</p>
+            <h4 class="text-center">Placeholder Title</h4>
+            <p class="text-center">Azores high barograph blowing sand ceilometer cooling degree day cumuliform d-value flash flood foehn freezing precipitation.</p>
+          </div>
+        </div>
+          <div class="col-lg-6">
+            <div class="text-center">
+              <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x700"></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="choices">
+                <p>placeholder</p>
+                <code class="padme">
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                </code>
+                <p>placeholder</p>
+                <code class="padme">
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                </code>
+                <p>placeholder</p>
+                <code class="padme">
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                </code>
+                <p>placeholder</p>
+                <code class="padme">
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                </code>
+                <p>placeholder</p>
+                <code class="padme">
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
+                </code>
+            </div>
+          </div>
+        </div>
+
+          <!-- <div class="row">
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+              <div class="col-lg-8">
+                <div class="text-center">
+                  <p>placeholder</p>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+            </div>
+
+          <div class="row">
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+              <div class="col-lg-8">
+                <div class="text-center">
+                  <p>placeholder</p>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <p>placeholder</p>
+              </div>
+          </div> -->
+  </div>
+
+</div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+
+/*font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Poppins', sans-serif;*/
+
+
+h1, h2, h3, h4 {
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+.panel-title {
+  font-size: 35px;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.area {
+  padding: 10px 0 10px 0;
+}
+
+.padme {
+  padding: 10px 0 10px
+}
