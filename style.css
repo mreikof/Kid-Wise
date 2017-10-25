@@ -29,6 +29,7 @@ p {
   float: right;
 }
 
+<<<<<<< HEAD
 img {
   margin: 15px;
 }
@@ -37,4 +38,11 @@ code {
   color: black;
   background-color: transparent;
   outline: 0;
+=======
+.icons {
+
+width:150px;
+/*border: 2px blue dotted;*/
+
+>>>>>>> d8ef31107524c14f47926dd8773f4a2003c6dd88
 }
