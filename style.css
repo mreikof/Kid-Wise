@@ -19,6 +19,11 @@ p {
   padding: 10px 0 10px 0;
 }
 
+.circle {
+
+
+}
+
 .padme {
   padding: 10px 0 10px
 }
@@ -31,7 +36,7 @@ p {
 
 .icons {
 
-width:150px;
-/*border: 2px blue dotted;*/
+width:170px;
+background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
 
 }

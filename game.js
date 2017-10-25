@@ -33,7 +33,9 @@ $("#today").on("click", function(event) {
     }).done(function(response) {
       console.log(response);
       console.log(response.breezometer_aqi);
-  $("#quality").text(response.breezometer_aqi);
+      console.log(response.random_recommendations.children);
+      $("#quality").text(response.breezometer_description);
+      $("#children").text(response.random_recommendations.children + ".");
     });
   });
 });
@@ -68,7 +70,9 @@ $("#tmrw").on("click", function(event) {
     }).done(function(response) {
       console.log(response);
       console.log(response.breezometer_aqi);
-      $("#quality").text(response.breezometer_aqi);
+      console.log(response.random_recommendations.children);
+      $("#quality").text(response.breezometer_description);
+      $("#children").text(response.random_recommendations.children + ".");
     });
   });
 });
@@ -105,7 +109,9 @@ $("#third").on("click", function(event) {
     }).done(function(response) {
       console.log(response);
       console.log(response.breezometer_aqi);
-      $("#quality").text(response.breezometer_aqi);
+      console.log(response.random_recommendations.children);
+      $("#quality").text(response.breezometer_description);
+      $("#children").text(response.random_recommendations.children + ".");
     });
 
   });
