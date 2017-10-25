@@ -1,4 +1,3 @@
-
 //Declare global variables here
 var todayTemps;
 var todayForecast;
@@ -22,8 +21,9 @@ $("#today").on("click", function(event) {
     $("#forecast-desc").text("Forecast: " + response.list[0].weather[0].main + ", " + response.list[0].weather[0].description);
     $("#air-desc").text("Humidity: " + response.list[0].humidity + "%");
 
-    todayTemps=response.list[0].temp.day;
-    todayForecast=response.list[0].weather[0].main;
+    todayTemps = response.list[0].temp.day;
+    todayForecast = response.list[0].weather[0].main;
+
     getDressed();
 
   });
@@ -87,72 +87,56 @@ function getAirQuality() {
   });
 }
 
-// function displayImage(placement, id, src) {
-//   $(placement).append("<img id='" + id + "' src='images/" + src + "' height='100px' width='auto'>");
-// }
+function displayImage(placement, id, src) {
+  $(placement).append("<img id='" + id + "' src='images/" + src + "' height='100px' width='auto'>");
+}
 
 function getDressed() {
 
-var girlclothes = { hotWeather: ["girlDress1.png", "girlTank1.png","boyShorts1.png", "girlSkirt1.png", "girlHat1.png", "boyHat2.png"],
-                    coldWeather: ["girlShirt1.png","girlShirt2.png","boyPants1.png", "boyPants2.png"],
-                  colderWeather: ["girlShirt2.png", "girlShirt3.png", "boyPants1.png", "boyPants2.png", "scarf2.png"]
-};
+  var girlclothes = {
+    hotWeather: ["girlDress1.png", "girlTank1.png", "boyShorts1.png", "girlSkirt1.png", "girlHat1.png", "boyHat2.png"],
+    hotWeatherCat: ["#tops", "#tops", "#bottoms", "#bottoms", "#accessories-1", "#accessories-1"],
+    coldWeather: ["girlShirt1.png", "girlShirt2.png", "boyPants1.png", "boyPants2.png", "boyHat2.png"],
+    coldWeatherCat: ["#tops", "#tops", "#bottoms", "#bottoms", "#accessories-1"],
+    colderWeather: ["girlShirt2.png", "girlShirt3.png", "boyPants1.png", "boyPants2.png", "scarf2.png"],
+    colderWeatherCat: ["#tops", "#tops", "#bottoms", "#bottoms", "#accessories-1"]
+  };
 
-var boyclothes = { hotWeather: ["boyTshirt1.png","boyTshirt2.png","boyShorts1.png", "boyShorts2.png","boyHat1.png", "boyHat2.png"],
-                   coldWeather: ["boyShirt1.png","boyTshirt2.png","boyPants1.png", "boyPants2.png"],
-                 colderWeather: ["boyShirt2.png", "boyShirt3.png", "boyPants1.png", "boyPants2.png", "scarf1.png"]
-};
+  var boyclothes = {
+    hotWeather: ["boyTshirt1.png", "boyTshirt2.png", "boyShorts1.png", "boyShorts2.png", "boyHat1.png", "boyHat2.png"],
+    coldWeather: ["boyShirt1.png", "boyTshirt2.png", "boyPants1.png", "boyPants2.png"],
+    colderWeather: ["boyShirt2.png", "boyShirt3.png", "boyPants1.png", "boyPants2.png", "scarf1.png"]
+  };
 
-var character = ["girl.png", "boy.png"];
+  var character = ["girl.png", "boy.png"];
+  var genderClothes = "girlclothes";
 
-var genderClothes = "girlclothes";
-
-console.log(todayTemps);
+  console.log(todayTemps);
 
   //build conditionals that displays the correct graphics
-$("#character").append("<img id='gender' src='images/girl2.png' height='500px' width='auto'>");
+  $("#character").append("<img id='gender' src='images/girl2.png' height='500px' width='auto'>");
 
-if (todayTemps > 80) {
-  $("#overall-results").text("It's warm! Be sure to dress lightly. Help dress me!");
-
-    // for(var i = 0; i < girlclothes.hotWeather.length; i++) {
-    //   displayImage("#tops", '#tops-' + i,girlclothes.hotWeather[i]);
-
-      $("#tops").append("<h4 class='text-center'> Your Tops </h4>");
-      $("#tops").append("<img id='top-1' src='images/" + girlclothes.hotWeather[0] + "' height='150px' width='auto'>");
-      $("#tops").append("<img id='top-2' src='images/" + girlclothes.hotWeather[1] + "' height='150px' width='auto'>");
-      $("#bottoms").append("<h4 class='text-center'> Your Bottoms </h4>");
-      $("#bottoms").append("<img id='bottom-1' src='images/" + girlclothes.hotWeather[2] + "' height='100px' width='auto'>");
-      $("#bottoms").append("<img id='bottom-2' src='images/" + girlclothes.hotWeather[3] + "' height='100px' width='auto'>");
-      $("#accessories-1").append("<h4 class='text-center'> Your Accessories </h4>");
-      $("#accessories-1").append("<img id='accessories-1' src='images/" + girlclothes.hotWeather[4] + "' height='50px' width='auto'>");
-      $("#accessories-1").append("<img id='accessories-2' src='images/" + girlclothes.hotWeather[5] + "' height='50px' width='auto'>");
+  for (var i = 0; i < girlclothes.hotWeather.length; i++) {
+    if (todayTemps > 80) {
+      $("#overall-results").text("It's warm! Be sure to dress lightly. Help dress me!");
+      displayImage(girlclothes.hotWeatherCat[i], girlclothes.hotWeatherCat[i] + "-" + i, girlclothes.hotWeather[i]);
+    } else if (todayTemps > 60) {
+      $("#overall-results").text("It may be cooler! Be sure to dress warmly. Help dress me!");
+      displayImage(girlclothes.coldWeatherCat[i], girlclothes.coldWeatherCat[i] + "-" + i, girlclothes.coldWeather[i]);
+    } else if (todayTemps > 30) {
+      $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Help dress me!");
+      displayImage(girlclothes.colderWeatherCat[i], girlclothes.colderWeatherCat[i] + "-" + i, girlclothes.colderWeather[i]);
+    } else {
+      alert("Oops");
+    }
   }
-
-else if ( todayTemps > 60 ){
-  $("#overall-results").text("It may be cooler! Be sure to dress warmly. Help dress me!");
-
-      $("#tops").append("<h4 class='text-center'> Your Tops </h4>");
-      $("#tops").append("<img id='top-1' src='images/" + girlclothes.coldWeather[0] + "' height='100px' width='auto'>");
-      $("#tops").append("<img id='top-2' src='images/" + girlclothes.coldWeather[1] + "' height='100px' width='auto'>");
-      $("#bottoms").append("<h4 class='text-center'> Your Bottoms </h4>");
-      $("#bottoms").append("<img id='bottom-1' src='images/" + girlclothes.coldWeather[2] + "' height='150px' width='auto'>");
-      $("#bottoms").append("<img id='bottom-2' src='images/" + girlclothes.coldWeather[3] + "' height='150px' width='auto'>");
 }
-else if ( todayTemps > 30 ){
-    $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Help dress me!");
-
-      $("#tops").append("<h4 class='text-center'> Your Tops </h4>");
-      $("#tops").append("<img id='top-1' src='images/" + girlclothes.colderWeather[0] + "' height='100px' width='auto'>");
-      $("#tops").append("<img id='top-2' src='images/" + girlclothes.colderWeather[1] + "' height='100px' width='auto'>");
-      $("#bottoms").append("<h4 class='text-center'> Your Bottoms </h4>");
-      $("#bottoms").append("<img id='bottom-1' src='images/" + girlclothes.colderWeather[2] + "' height='100px' width='auto'>");
-      $("#bottoms").append("<img id='bottom-2' src='images/" + girlclothes.colderWeather[3] + "' height='100px' width='auto'>");
-      $("#accessories-1").append("<h4 class='text-center'> Your Accessories </h4>");
-      $("#accessories-1").append("<img id='accessories-1' src='images/" + girlclothes.colderWeather[4] + "' height='100px' width='auto'>");
-}
-
-else {
-  alert("Oops");
-  }
+// Function to clear out the right side panel - the clothes choices - should the user want to try a different location
+function getClear() {
+  $("#tops-0").html(" ");
+  $("#tops-1").html(" ");
+  $("#bottoms-2").html(" ");
+  $("#bottoms-3").html(" ");
+  $("#accessories-1-4").html(" ");
+  $("#accessories-1-5").html(" ");
 }
