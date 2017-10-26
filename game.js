@@ -1,8 +1,6 @@
 //Declare global variables here
 var todayTemps;
 var todayForecast;
-
-// First day weather tracker
 var show;
 var lon;
 var lat;
@@ -19,23 +17,16 @@ $("#today").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-<<<<<<< HEAD
-    $("#location").text("Temperature: " + response.list[0].temp.day + " (F)");
-    $("#forecast-desc").text("Forecast: " + response.list[0].weather[0].main + ", " + response.list[0].weather[0].description);
-    $("#air-desc").text("Humidity: " + response.list[0].humidity + "%");
-
-    todayTemps = response.list[0].temp.day;
-    todayForecast = response.list[0].weather[0].main;
-
-    getDressed();
-
-=======
     $("#location").text(response.list[0].temp.day + " (F)");
     $("#forecast-desc").text(response.list[0].weather[0].main + ", " + response.list[0].weather[0].description);
     $("#air-desc").text(response.list[0].humidity + "%");
     var icon = response.list[0].weather[0].icon;
     var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
     $(".icon").html("<img class=icons src='" + iconUrl + "'>");
+    todayTemps = response.list[0].temp.day;
+    todayForecast = response.list[0].weather[0].main;
+
+    getDressed();
     // Added breezometer air quality api and sinked it to the response from the weather api
     var lon = response.city.coord.lon;
     var lat = response.city.coord.lat;
@@ -48,9 +39,11 @@ $("#today").on("click", function(event) {
     }).done(function(response) {
       console.log(response);
       console.log(response.breezometer_aqi);
-  $("#quality").text(response.breezometer_aqi);
+      console.log(response.random_recommendations.children);
+      $("#quality").text(response.breezometer_description);
+      $("#children").text(response.random_recommendations.children + ".");
+
     });
->>>>>>> d8ef31107524c14f47926dd8773f4a2003c6dd88
   });
 });
 // Second Day Weather Tracker
@@ -84,7 +77,9 @@ $("#tmrw").on("click", function(event) {
     }).done(function(response) {
       console.log(response);
       console.log(response.breezometer_aqi);
-      $("#quality").text(response.breezometer_aqi);
+      console.log(response.random_recommendations.children);
+      $("#quality").text(response.breezometer_description);
+      $("#children").text(response.random_recommendations.children + ".");
     });
   });
 });
@@ -121,27 +116,13 @@ $("#third").on("click", function(event) {
     }).done(function(response) {
       console.log(response);
       console.log(response.breezometer_aqi);
-      $("#quality").text(response.breezometer_aqi);
+      console.log(response.random_recommendations.children);
+      $("#quality").text(response.breezometer_description);
+      $("#children").text(response.random_recommendations.children + ".");
     });
 
   });
 });
-<<<<<<< HEAD
-
-function getAirQuality() {
-
-  var queryURLTwo = "https://api.breezometer.com/baqi/?lat=" + lat + "&lon=" + long + "&key=fb9700086a3d410bb5256a0acc91cb88";
-  $.ajax({
-    url: queryURLTwo,
-    method: "GET"
-  }).done(function(response) {
-    console.log(response);
-    console.log(response.breezometer_aqi);
-    console.log(response.breezometer_description);
-    console.log(response.random_recommendations.children);
-    console.log(response.dominant_pollutant_text.main);
-  });
-}
 
 function displayImage(placement, id, src) {
   $(placement).append("<img id='" + id + "' src='images/" + src + "' height='100px' width='auto'>");
@@ -196,5 +177,3 @@ function getClear() {
   $("#accessories-1-4").html(" ");
   $("#accessories-1-5").html(" ");
 }
-=======
->>>>>>> d8ef31107524c14f47926dd8773f4a2003c6dd88

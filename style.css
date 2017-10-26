@@ -19,6 +19,11 @@ p {
   padding: 10px 0 10px 0;
 }
 
+.circle {
+
+
+}
+
 .padme {
   padding: 10px 0 10px
 }
@@ -29,6 +34,7 @@ p {
   float: right;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 img {
   margin: 15px;
@@ -45,4 +51,11 @@ width:150px;
 /*border: 2px blue dotted;*/
 
 >>>>>>> d8ef31107524c14f47926dd8773f4a2003c6dd88
+=======
+.icons {
+
+width:170px;
+background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
+
+>>>>>>> workingBranch
 }
