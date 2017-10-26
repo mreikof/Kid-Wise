@@ -1,4 +1,3 @@
-
 /*font-family: 'Shadows Into Light Two', cursive;
 font-family: 'Poppins', sans-serif;*/
 
@@ -34,9 +33,21 @@ p {
   float: right;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+img {
+  margin: 15px;
+}
+
+code {
+  color: black;
+  background-color: transparent;
+  outline: 0;
+}
 .icons {
 
 width:170px;
 background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
 
+>>>>>>> workingBranch
 }
