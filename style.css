@@ -1,5 +1,4 @@
-
-/*font-family: 'Shadows Into Light Two', cursive;
+/**font-family: 'Shadows Into Light Two', cursive;
 font-family: 'Poppins', sans-serif;*/
 
 
@@ -22,6 +21,9 @@ p {
 .padme {
   padding: 10px 0 10px
 }
+.btn {
+  padding:6px;
+}
 
 #find-me {
   width: 25px;
@@ -29,7 +31,7 @@ p {
   float: right;
 }
 
-<<<<<<< HEAD
+
 img {
   margin: 15px;
 }
@@ -38,11 +40,10 @@ code {
   color: black;
   background-color: transparent;
   outline: 0;
-=======
+}
 .icons {
 
-width:150px;
-/*border: 2px blue dotted;*/
+width:170px;
+background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
 
->>>>>>> d8ef31107524c14f47926dd8773f4a2003c6dd88
 }
