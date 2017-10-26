@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Database Test</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="jumbotron text-center">
+  		<h1>User Recognition Test</h1>
+  		<p>Gosh! I really hope this works!</p> 
+	</div>
+
+	<div class="container">
+		
+		<div class="panel panel-default">
+  			<div class="panel-heading">Current User</div>
+  			<div class="panel-body">
+				<form>
+  					<div class="form-group">
+    					<label for="name-input">Name:</label>
+    					<input type="text" class="form-control" id="name-input">
+  					</div>
+  					<div class="form-group">
+    					<label for="gender-input">Gender:</label>
+    					<input type="text" class="form-control" id="gender-input">
+  					</div>
+  					<div class="form-group">
+    					<label for="location-input">Location:</label>
+    					<input type="text" class="form-control" id="location-input">
+  					</div>
+  					<button class="btn btn-primary" id="add-user-btn" type="submit">Submit</button>
+				</form>
+				<div class="empty-div">
+				</div>
+  			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+	<script>
+
+  var userName;
+  var userGender;
+  var userLocation;
+  var InitialUser = 0;
+  var userCounter = InitialUser;
+
+  var config = {
+    apiKey: "AIzaSyD9NnsfPf4Mnu6lOdxV7GvsqOiChF9Ak1k",
+    authDomain: "project1-practice.firebaseapp.com",
+    databaseURL: "https://project1-practice.firebaseio.com",
+    projectId: "project1-practice",
+    storageBucket: "",
+    messagingSenderId: "904406699956"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+	//console.log("line 66 userCounter: " + userCounter)
+  database.ref("/userNumber").on("value", function(snapshot) {
+  	// console.log("line 68 snapshot.val().userCounter: " + snapshot.val().userNumber.users);
+  	if (snapshot.child("users").exists()) {
+  		//console.log("if statement line 70 firing");
+  		// console.log("line 70 userCounter: " + userCounter)
+  		userCounter = snapshot.val().users;
+  		// console.log("line 72 userCounter: " + userCounter)
+  	}
+
+  });
+
+ 
+  database.ref("/userData" + userCounter).on("value", function(snapshot) {
+/*This section will be to check if user has id number in local storage and compare to stored
+value in firebase. If the two match data will be displayed. */
+
+//   if (snapshot.child("name").exists()) {
+
+//     userName = snapshot.val().name;
+//     userGender = snapshot.val().gender;
+//     userLocation = snapshot.val().location;
+
+//     $(".empty-div").append("<p>Welcome " + userName + "!</p><p>You are a " + userGender + "!</p><p>You live in " + userLocation + "!");
+//     //set variables for gender, location, and avatar to match saved values
+// 	}
+});
+  //else {}
+    //redirect to sign-in screen
+  
+	   
+  $("#add-user-btn").on("click", function(event) {
+    event.preventDefault();
+    //console.log("line 94 userCounter: " + userCounter);
+    userCounter++;
+    //console.log("line 96 userCounter: " + userCounter);
+    var newName = $("#name-input").val().trim();
+    var newGender = $("#gender-input").val().trim();
+    var newLocation = $("#location-input").val().trim();
+    
+
+    var newUser = {
+      name: newName,
+      gender: newGender,
+      location: newLocation,
+      id: userCounter
+    };
+    // console.log("line 108 userCounter value:" + userCounter);
+    // console.log("line 108 newUser value:" + JSON.stringify(newUser));
+    database.ref("/userData" + userCounter).set(newUser);
+    database.ref("/userNumber").set({
+    	users: userCounter
+    });
+  });
+		
+
+
+	</script>
+</body>
+</html>
