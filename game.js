@@ -7,6 +7,7 @@ var lat;
 
 $("#today").on("click", function(event) {
   event.preventDefault();
+  getClear();
   var city = $("#pac-input").val();
   console.log(city);
   $("#city-area").text(city);
@@ -49,9 +50,11 @@ $("#today").on("click", function(event) {
 // Second Day Weather Tracker
 $("#tmrw").on("click", function(event) {
   event.preventDefault();
+  getClear();
   var city = $("#pac-input").val();
   console.log(city);
   $("#city-area").text(city);
+
   var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&appid=166a433c57516f51dfab1f7edaed8413";
   // ajax call
   $.ajax({
@@ -65,6 +68,9 @@ $("#tmrw").on("click", function(event) {
     var icon = response.list[1].weather[0].icon;
     var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
     $(".icon").html("<img class=icons src='" + iconUrl + "'>");
+    todayTemps = response.list[1].temp.day;
+    getDressed();
+
     // Added breezometer air quality api and sinked it to the response from the weather api
     var lon = response.city.coord.lon;
     var lat = response.city.coord.lat;
@@ -87,7 +93,7 @@ $("#tmrw").on("click", function(event) {
 // Third Day Weather Tracker
 $("#third").on("click", function(event) {
   event.preventDefault();
-
+  getClear();
   var city = $("#pac-input").val();
   console.log(city);
   $("#city-area").text(city);
@@ -104,6 +110,10 @@ $("#third").on("click", function(event) {
     var icon = response.list[2].weather[0].icon;
     var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
     $(".icon").html("<img class=icons src='" + iconUrl + "'>");
+
+    todayTemps = response.list[2].temp.day;
+    getDressed();
+
     // Added breezometer air quality api and sinked it to the response from the weather api
     var lon = response.city.coord.lon;
     var lat = response.city.coord.lat;
@@ -120,7 +130,6 @@ $("#third").on("click", function(event) {
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
     });
-
   });
 });
 
@@ -170,10 +179,10 @@ function getDressed() {
 }
 // Function to clear out the right side panel - the clothes choices - should the user want to try a different location
 function getClear() {
-  $("#tops-0").html(" ");
-  $("#tops-1").html(" ");
-  $("#bottoms-2").html(" ");
-  $("#bottoms-3").html(" ");
-  $("#accessories-1-4").html(" ");
-  $("#accessories-1-5").html(" ");
+  $("#tops").html(" ");
+  $("#bottoms").html(" ");
+  $("#accessories-1").html(" ");
+  $("#accessories-2").html(" ");
+  $("#footwear").html(" ");
+  $("#character").html(" ");
 }
