@@ -28,6 +28,7 @@ $("#today").on("click", function(event) {
     todayForecast = response.list[0].weather[0].main;
 
     getDressed();
+
     // Added breezometer air quality api and sinked it to the response from the weather api
     var lon = response.city.coord.lon;
     var lat = response.city.coord.lat;
@@ -41,8 +42,31 @@ $("#today").on("click", function(event) {
       console.log(response);
       console.log(response.breezometer_aqi);
       console.log(response.random_recommendations.children);
+      console.log(response.breezometer_color);
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
+    // declaring variables for the air quality images
+      var first = "http://www.colorhexa.com/800000.png";
+      var second = "http://www.colorhexa.com/fe4600.png";
+      var third = "http://www.colorhexa.com/fec500.png";
+      var fourth = "http://html-color.org/DBFB4B.jpg";
+      var fifth = "http://html-color.org/81DD38.jpg";
+      var sixth = "http://www.colorhexa.com/009e3a.png";
+    // Writing the if/else statement for the air quality output
+      if (response.breezometer_aqi === 0) {
+        $("#pollution").html("<img class=icons src='" + first + "'>");
+      } else if (response.breezometer_aqi > 0 & response.breezometer_aqi <= 20) {
+        $("#pollution").html("<img class=icons src='" + second + "'>");
+      } else if (response.breezometer_aqi > 20 & response.breezometer_aqi <= 40) {
+        $("#pollution").html("<img class=icons src='" + third + "'>");
+      } else if (response.breezometer_aqi > 40 & response.breezometer_aqi <= 60) {
+        $("#pollution").html("<img class=icons src='" + fourth + "'>");
+      } else if (response.breezometer_aqi > 60 & response.breezometer_aqi <= 80) {
+        $("#pollution").html("<img class=icons src='" + fifth + "'>");
+      } else if(response.breezometer_aqi > 80 & response.breezometer_aqi <= 100) {
+        $("#pollution").html("<img class=icons src='" + six + "'>");
+      }
+
 
     });
   });
@@ -86,6 +110,27 @@ $("#tmrw").on("click", function(event) {
       console.log(response.random_recommendations.children);
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
+      // declaring variables for the air quality images
+        var first = "http://www.colorhexa.com/800000.png";
+        var second = "http://www.colorhexa.com/fe4600.png";
+        var third = "http://www.colorhexa.com/fec500.png";
+        var fourth = "http://html-color.org/DBFB4B.jpg";
+        var fifth = "http://html-color.org/81DD38.jpg";
+        var sixth = "http://www.colorhexa.com/009e3a.png";
+      // Writing the if/else statement for the air quality output
+        if (response.breezometer_aqi === 0) {
+          $("#pollution").html("<img class=icons src='" + first + "'>");
+        } else if (response.breezometer_aqi > 0 & response.breezometer_aqi <= 20) {
+          $("#pollution").html("<img class=icons src='" + second + "'>");
+        } else if (response.breezometer_aqi > 20 & response.breezometer_aqi <= 40) {
+          $("#pollution").html("<img class=icons src='" + third + "'>");
+        } else if (response.breezometer_aqi > 40 & response.breezometer_aqi <= 60) {
+          $("#pollution").html("<img class=icons src='" + fourth + "'>");
+        } else if (response.breezometer_aqi > 60 & response.breezometer_aqi <= 80) {
+          $("#pollution").html("<img class=icons src='" + fifth + "'>");
+        } else if(response.breezometer_aqi > 80 & response.breezometer_aqi <= 100) {
+          $("#pollution").html("<img class=icons src='" + six + "'>");
+        }
     });
   });
 });
@@ -129,6 +174,27 @@ $("#third").on("click", function(event) {
       console.log(response.random_recommendations.children);
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
+      // declaring variables for the air quality images
+        var first = "http://www.colorhexa.com/800000.png";
+        var second = "http://www.colorhexa.com/fe4600.png";
+        var third = "http://www.colorhexa.com/fec500.png";
+        var fourth = "http://html-color.org/DBFB4B.jpg";
+        var fifth = "http://html-color.org/81DD38.jpg";
+        var sixth = "http://www.colorhexa.com/009e3a.png";
+      // Writing the if/else statement for the air quality output
+        if (response.breezometer_aqi === 0) {
+          $("#pollution").html("<img class=icons src='" + first + "'>");
+        } else if (response.breezometer_aqi > 0 & response.breezometer_aqi <= 20) {
+          $("#pollution").html("<img class=icons src='" + second + "'>");
+        } else if (response.breezometer_aqi > 20 & response.breezometer_aqi <= 40) {
+          $("#pollution").html("<img class=icons src='" + third + "'>");
+        } else if (response.breezometer_aqi > 40 & response.breezometer_aqi <= 60) {
+          $("#pollution").html("<img class=icons src='" + fourth + "'>");
+        } else if (response.breezometer_aqi > 60 & response.breezometer_aqi <= 80) {
+          $("#pollution").html("<img class=icons src='" + fifth + "'>");
+        } else if(response.breezometer_aqi > 80 & response.breezometer_aqi <= 100) {
+          $("#pollution").html("<img class=icons src='" + six + "'>");
+        }
     });
   });
 });
