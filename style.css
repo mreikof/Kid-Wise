@@ -31,6 +31,12 @@ p {
   float: right;
 }
 
+#location {
+  font-size: 35px;
+  border-radius: 50%;
+margin:40px;
+}
+
 
 img {
   margin: 15px;

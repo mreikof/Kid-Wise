@@ -18,7 +18,7 @@ $("#today").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(response.list[0].temp.day + " (F)");
+    $("#location").text(parseInt(response.list[0].temp.day) + " °F");
     $("#forecast-desc").text(response.list[0].weather[0].main + ", " + response.list[0].weather[0].description);
     $("#air-desc").text(response.list[0].humidity + "%");
     var icon = response.list[0].weather[0].icon;
@@ -55,15 +55,15 @@ $("#today").on("click", function(event) {
     // Writing the if/else statement for the air quality output
       if (response.breezometer_aqi === 0) {
         $("#pollution").html("<img class=icons src='" + first + "'>");
-      } else if (response.breezometer_aqi > 0 & response.breezometer_aqi <= 20) {
+      } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
         $("#pollution").html("<img class=icons src='" + second + "'>");
-      } else if (response.breezometer_aqi > 20 & response.breezometer_aqi <= 40) {
+      } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
         $("#pollution").html("<img class=icons src='" + third + "'>");
-      } else if (response.breezometer_aqi > 40 & response.breezometer_aqi <= 60) {
+      } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
         $("#pollution").html("<img class=icons src='" + fourth + "'>");
-      } else if (response.breezometer_aqi > 60 & response.breezometer_aqi <= 80) {
+      } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
         $("#pollution").html("<img class=icons src='" + fifth + "'>");
-      } else if(response.breezometer_aqi > 80 & response.breezometer_aqi <= 100) {
+      } else if(response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
         $("#pollution").html("<img class=icons src='" + six + "'>");
       }
 
@@ -86,7 +86,7 @@ $("#tmrw").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(response.list[1].temp.day + " (F)");
+    $("#location").text(parseInt(response.list[0].temp.day) + " °F");
     $("#forecast-desc").text(response.list[1].weather[0].main + ", " + response.list[1].weather[0].description);
     $("#air-desc").text(response.list[1].humidity + "%");
     var icon = response.list[1].weather[0].icon;
@@ -120,15 +120,15 @@ $("#tmrw").on("click", function(event) {
       // Writing the if/else statement for the air quality output
         if (response.breezometer_aqi === 0) {
           $("#pollution").html("<img class=icons src='" + first + "'>");
-        } else if (response.breezometer_aqi > 0 & response.breezometer_aqi <= 20) {
+        } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
           $("#pollution").html("<img class=icons src='" + second + "'>");
-        } else if (response.breezometer_aqi > 20 & response.breezometer_aqi <= 40) {
+        } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
           $("#pollution").html("<img class=icons src='" + third + "'>");
-        } else if (response.breezometer_aqi > 40 & response.breezometer_aqi <= 60) {
+        } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
           $("#pollution").html("<img class=icons src='" + fourth + "'>");
-        } else if (response.breezometer_aqi > 60 & response.breezometer_aqi <= 80) {
+        } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
           $("#pollution").html("<img class=icons src='" + fifth + "'>");
-        } else if(response.breezometer_aqi > 80 & response.breezometer_aqi <= 100) {
+        } else if(response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
           $("#pollution").html("<img class=icons src='" + six + "'>");
         }
     });
@@ -149,7 +149,7 @@ $("#third").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(response.list[2].temp.day + "(F)");
+    $("#location").text(parseInt(response.list[0].temp.day) + " °F");
     $("#forecast-desc").text(response.list[2].weather[0].main + ", " + response.list[2].weather[0].description);
     $("#air-desc").text(response.list[2].humidity + "%");
     var icon = response.list[2].weather[0].icon;
@@ -184,15 +184,15 @@ $("#third").on("click", function(event) {
       // Writing the if/else statement for the air quality output
         if (response.breezometer_aqi === 0) {
           $("#pollution").html("<img class=icons src='" + first + "'>");
-        } else if (response.breezometer_aqi > 0 & response.breezometer_aqi <= 20) {
+        } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
           $("#pollution").html("<img class=icons src='" + second + "'>");
-        } else if (response.breezometer_aqi > 20 & response.breezometer_aqi <= 40) {
+        } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
           $("#pollution").html("<img class=icons src='" + third + "'>");
-        } else if (response.breezometer_aqi > 40 & response.breezometer_aqi <= 60) {
+        } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
           $("#pollution").html("<img class=icons src='" + fourth + "'>");
-        } else if (response.breezometer_aqi > 60 & response.breezometer_aqi <= 80) {
+        } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
           $("#pollution").html("<img class=icons src='" + fifth + "'>");
-        } else if(response.breezometer_aqi > 80 & response.breezometer_aqi <= 100) {
+        } else if(response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
           $("#pollution").html("<img class=icons src='" + six + "'>");
         }
     });
