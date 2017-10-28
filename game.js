@@ -18,7 +18,7 @@ $("#today").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(parseInt(response.list[0].temp.day) + " °F");
+    $("#location").text(parseInt(response.list[0].temp.day) + "°");
     $("#forecast-desc").text(response.list[0].weather[0].main + ", " + response.list[0].weather[0].description);
     $("#air-desc").text(response.list[0].humidity + "%");
     var icon = response.list[0].weather[0].icon;
@@ -45,14 +45,14 @@ $("#today").on("click", function(event) {
       console.log(response.breezometer_color);
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
-    // declaring variables for the air quality images
+      // declaring variables for the air quality images
       var first = "http://www.colorhexa.com/800000.png";
       var second = "http://www.colorhexa.com/fe4600.png";
       var third = "http://www.colorhexa.com/fec500.png";
       var fourth = "http://html-color.org/DBFB4B.jpg";
       var fifth = "http://html-color.org/81DD38.jpg";
       var sixth = "http://www.colorhexa.com/009e3a.png";
-    // Writing the if/else statement for the air quality output
+      // Writing the if/else statement for the air quality output
       if (response.breezometer_aqi === 0) {
         $("#pollution").html("<img class=icons src='" + first + "'>");
       } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
@@ -86,7 +86,7 @@ $("#tmrw").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(parseInt(response.list[0].temp.day) + " °F");
+    $("#location").text(parseInt(response.list[0].temp.day) + "°");
     $("#forecast-desc").text(response.list[1].weather[0].main + ", " + response.list[1].weather[0].description);
     $("#air-desc").text(response.list[1].humidity + "%");
     var icon = response.list[1].weather[0].icon;
@@ -111,12 +111,12 @@ $("#tmrw").on("click", function(event) {
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
       // declaring variables for the air quality images
-        var first = "http://www.colorhexa.com/800000.png";
-        var second = "http://www.colorhexa.com/fe4600.png";
-        var third = "http://www.colorhexa.com/fec500.png";
-        var fourth = "http://html-color.org/DBFB4B.jpg";
-        var fifth = "http://html-color.org/81DD38.jpg";
-        var sixth = "http://www.colorhexa.com/009e3a.png";
+      var first = "http://www.colorhexa.com/800000.png";
+      var second = "http://www.colorhexa.com/fe4600.png";
+      var third = "http://www.colorhexa.com/fec500.png";
+      var fourth = "http://html-color.org/DBFB4B.jpg";
+      var fifth = "http://html-color.org/81DD38.jpg";
+      var sixth = "http://www.colorhexa.com/009e3a.png";
       // Writing the if/else statement for the air quality output
         if (response.breezometer_aqi === 0) {
           $("#pollution").html("<img class=icons src='" + first + "'>");
@@ -149,7 +149,7 @@ $("#third").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(parseInt(response.list[0].temp.day) + " °F");
+    $("#location").text(parseInt(response.list[0].temp.day) + "°");
     $("#forecast-desc").text(response.list[2].weather[0].main + ", " + response.list[2].weather[0].description);
     $("#air-desc").text(response.list[2].humidity + "%");
     var icon = response.list[2].weather[0].icon;
@@ -175,12 +175,12 @@ $("#third").on("click", function(event) {
       $("#quality").text(response.breezometer_description);
       $("#children").text(response.random_recommendations.children + ".");
       // declaring variables for the air quality images
-        var first = "http://www.colorhexa.com/800000.png";
-        var second = "http://www.colorhexa.com/fe4600.png";
-        var third = "http://www.colorhexa.com/fec500.png";
-        var fourth = "http://html-color.org/DBFB4B.jpg";
-        var fifth = "http://html-color.org/81DD38.jpg";
-        var sixth = "http://www.colorhexa.com/009e3a.png";
+      var first = "http://www.colorhexa.com/800000.png";
+      var second = "http://www.colorhexa.com/fe4600.png";
+      var third = "http://www.colorhexa.com/fec500.png";
+      var fourth = "http://html-color.org/DBFB4B.jpg";
+      var fifth = "http://html-color.org/81DD38.jpg";
+      var sixth = "http://www.colorhexa.com/009e3a.png";
       // Writing the if/else statement for the air quality output
         if (response.breezometer_aqi === 0) {
           $("#pollution").html("<img class=icons src='" + first + "'>");

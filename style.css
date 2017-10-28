@@ -1,7 +1,6 @@
 /**font-family: 'Shadows Into Light Two', cursive;
 font-family: 'Poppins', sans-serif;*/
 
-
 h1, h2, h3, h4 {
   font-family: 'Shadows Into Light Two', cursive;
 }
@@ -21,8 +20,9 @@ p {
 .padme {
   padding: 10px 0 10px
 }
+
 .btn {
-  padding:6px;
+  padding: 6px;
 }
 
 #find-me {
@@ -34,9 +34,14 @@ p {
 #location {
   font-size: 35px;
   border-radius: 50%;
-margin:40px;
+  margin: 40px;
 }
 
+.humidity {
+  font-size: 35px;
+  border-radius: 50%;
+  margin: 40px;
+}
 
 img {
   margin: 15px;
@@ -47,10 +52,9 @@ code {
   background-color: transparent;
   outline: 0;
 }
+
 .icons {
-
-width:170px;
-background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
-border-radius: 50%;
-
+  width: 170px;
+  background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
+  border-radius: 50%;
 }
