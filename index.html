@@ -18,6 +18,7 @@
 
 <body>
 
+
   <!-- Overall Bootstrap Grid -->
   <div class="container">
     <div class="row">
@@ -135,6 +136,15 @@
           </div>
 
         </div>
+        <!--drag and drop events-->
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+        <img id="child" src="images/boy1.png" draggable="true"
+        ondragstart="drag(event)" width="200" height="250">
+        <img id="accessories" src="images/boyShirt1.png" draggable="true"
+        ondragstart="drag(event)" width="200" height="70">
+        <img id="accessories" src="images/boyPants1.png" draggable="true"
+        ondragstart="drag(event)" width="125" height="90">
 
         <script src="game.js"></script>
 </body>
