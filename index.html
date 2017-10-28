@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>It's MY Closet, Mom!</title>
+  <title>Weather Wise Kid Wise</title>
 
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:500|Shadows+Into+Light+Two" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Podkova:800|Suez+One" rel="stylesheet">
 
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -19,62 +19,71 @@
 <body>
 
   <!-- Overall Bootstrap Grid -->
+  <div class="row">
+    <div class="col-lg-12">
+      <nav class="navbar navbar-expand-md fixed-top" id="header">
+        <div>
+          <a><img id="logo-2" src="images/logo-two.png" width="auto" height="40"></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
   <div class="container">
+
+    <!-- Area where the search bar and buttons on left side are located -->
     <div class="row">
-      <div class="col-lg-3">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-          <div>
-            <code>
-              <form class="form-inline">
-                <input class="form-control" id="pac-input" type="text" placeholder="Location" aria-label="Search">
-                <img src="me-icon.png" class="img-responsive" id="find-me" alt="Responsive image">
-              </form>
-            </code>
-          </div>
+        <div class="col-lg-3">
+            <form class="form-inline text-center">
+               <input class="form-control" id="pac-input" type="text" placeholder="Where do you live?" aria-label="Search">
+            </form>
           <div class="text-center">
             <input class="btn btn-primary" id="today" type="button" value="Today">
-            <input class="btn btn-primary" id="tmrw" type="submit" value="Next Day">
-            <input class="btn btn-primary" id="third" type="reset" value="3-Day">
-        </nav>
+            <input class="btn btn-primary" id="tmrw" type="button" value="Next Day">
+            <input class="btn btn-primary" id="third" type="button" value="3-Day">
+          </div>
         </div>
 
-        <div class="col-lg-9">
-          <h1 class="display-1 text-center">It's MY Closet, Mom!</h1>
-        </div>
+          <div class="col-lg-9" id="name-area">
+              <h1 id="user-name">Hi User!</h1>
+          </div>
       </div>
 
 
 
       <div class="row">
         <!-- Left Panel - Weather & allergen results here  -->
-        <div class="col-lg-3">
+        <div class="col-lg-3" id="right-panel">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Weather Results</h3>
-              <p>for the city of
-                <p id="city-area">___________ </p>
-              </p>
-              <h5>Parent Alert: <h5 id="children"></h5></h5>
+              <p class="weather-title">Your Weather Results for</p>
+                <h1 id="city-area"></h1>
+                <hr>
+              <h5 class="bold-me">Parent Alert: <h5 id="children"></h5></h5>
             </div>
             <div class="panel-body text-center">
               <div class="temp area">
-                <h5>Temperature:</h5>
+                <h5 class="font-color">TEMPERATURE:</h5>
                 <a id="location"><img src="sunCloud.png" width="150" height="140"></a>
+                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
               </div>
               <div class="forecast area">
-                <h5>Forecast:</h5>
-                <a class="icon"><img src="http://tpalsson.com/wp-content/uploads/2016/04/Rainy-Day.png" width="150" height="140"></a>
-                <h5 id="forecast-desc"></h5>
+                <h5 class="font-color">FORECAST:</h5>
+                <a class="icon" id="forecast-icon"><img src="http://tpalsson.com/wp-content/uploads/2016/04/Rainy-Day.png" width="150" height="140"></a>
+                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
+                <h5 class="font-color" id="forecast-desc"></h5>
               </div>
               <div class="air area">
-                <h5>Humidity:</h5>
+                <h5 class="font-color">HUMIDITY:</h5>
                 <a class="humidity"><img src="tempSun.png" width="120" height="120"></a>
-                <h5 id="air-desc"></h5>
+                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
+                <h5 class="font-color" id="air-desc"></h5>
               </div>
               <div class="allergies area">
-                <h5 id="pollen-desc">Air Quality:</h5>
+                <h5 class="font-color" id="pollen-desc">AIR QUALITY:</h5>
                 <a id="pollution"><img src="https://i0.wp.com/hewittchamber.com/wp-content/uploads/2016/04/Earth-Day.png" width="150" height="160"></a>
-                <h5 id="quality"></h5>
+                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
+                <h5 class="font-color" id="quality"></h5>
               </div>
             </div>
           </div>
@@ -82,53 +91,40 @@
 
         <!-- Game centeral: Dress Me! with Weather Apprpriate clothes-->
         <div class="col-lg-9">
-          <div class="panel-heading">
-            <h3 class="panel-title text-center" id="overall-results">Game Area</h3>
-          </div>
-          <div class="row">
-            <div class="col-lg-1">
-              <div>
-                <!-- <h4 class="text-center">Placeholder Title</h4>
-                <p class="text-center">Azores high barograph blowing sand ceilometer cooling degree day cumuliform d-value flash flood foehn freezing precipitation.</p>
-                <h4 class="text-center">Placeholder Title</h4>
-                <p class="text-center">Azores high barograph blowing sand ceilometer cooling degree day cumuliform d-value flash flood foehn freezing precipitation.</p>
-                <h4 class="text-center">Placeholder Title</h4>
-                <p class="text-center">Azores high barograph blowing sand ceilometer cooling degree day cumuliform d-value flash flood foehn freezing precipitation.</p> -->
+<!-- spitting up the title panel portion  -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel-heading">
+                        <p class="panel-title" id="overall-results">placeholder</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                  <a><img id="logo-1" src="images/logo.png"></a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6">
+          <div class="row" id="background-img">
+            <div class="col-lg-8">
               <div class="text-center" id="character">
-                <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x700"></a> -->
               </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-4">
               <div class="choices">
                 <code class="padme" id="tops">
-                <h4 class="text-center"> Your Tops </h4>
-                  <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a> -->
+                <h4 class="text-center"> Pick a TOP </h4>
                 </code>
                 <!-- <p>placeholder</p> -->
                 <code class="padme" id="bottoms">
-                <h4 class="text-center"> Your Bottoms </h4>
-                  <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a> -->
+                <h4 class="text-center"> Pick a BOTTOM </h4>
                 </code>
                 <!-- <p>placeholder</p> -->
                 <code class="padme" id="accessories-1">
-                <h4 class="text-center"> Your Accessories </h4>
-                  <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a> -->
+                <h4 class="text-center"> Pick an ACCESSORY </h4>
                 </code>
                 <!-- <p>placeholder</p> -->
                 <code class="padme" id="accessories-2">
-                  <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a> -->
                 </code>
                 <!-- <p>placeholder</p> -->
                 <code class="padme" id="footwear">
-                  <!-- <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a>
-                  <a href="https://placeholder.com"><img src="http://via.placeholder.com/120x120"></a> -->
                 </code>
               </div>
             </div>
