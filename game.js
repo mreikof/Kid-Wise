@@ -230,13 +230,18 @@ function getDressed() {
 
   for (var i = 0; i < girlclothes.hotWeather.length; i++) {
     if (todayTemps > 80) {
-      $("#overall-results").text("It's warm! Be sure to dress lightly. Help dress me!");
+      $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
+      
       displayImage(girlclothes.hotWeatherCat[i], girlclothes.hotWeatherCat[i] + "-" + i, girlclothes.hotWeather[i]);
-    } else if (todayTemps > 60) {
-      $("#overall-results").text("It may be cooler! Be sure to dress warmly. Help dress me!");
+    } else if ( todayTemps > 60) {
+      $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");
+
       displayImage(girlclothes.coldWeatherCat[i], girlclothes.coldWeatherCat[i] + "-" + i, girlclothes.coldWeather[i]);
+
+
     } else if (todayTemps > 30) {
-      $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Help dress me!");
+      $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Pick long-sleeved tops, long pants and throw on a scarf!");
+
       displayImage(girlclothes.colderWeatherCat[i], girlclothes.colderWeatherCat[i] + "-" + i, girlclothes.colderWeather[i]);
     } else {
       alert("Oops");
@@ -245,10 +250,11 @@ function getDressed() {
 }
 // Function to clear out the right side panel - the clothes choices - should the user want to try a different location
 function getClear() {
-  $("#tops").html(" ");
-  $("#bottoms").html(" ");
-  $("#accessories-1").html(" ");
-  $("#accessories-2").html(" ");
-  $("#footwear").html(" ");
+  $("#tops-0").html(" ");
+  $("#tops-1").html(" ");
+  $("#bottoms-2").html(" ");
+  $("#bottoms-3").html(" ");
+  $("#accessories-1-4").html(" ");
+  $("#accessories-2-5").html(" ");
   $("#character").html(" ");
 }

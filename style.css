@@ -1,16 +1,53 @@
-/**font-family: 'Shadows Into Light Two', cursive;
-font-family: 'Poppins', sans-serif;*/
+/*font-family: 'Podkova', serif; H2, H3, H4
+font-family: 'Suez One', serif; H1
+font-family: 'Lato', sans-serif; Everywhere else */
 
-h1, h2, h3, h4 {
-  font-family: 'Shadows Into Light Two', cursive;
+/*BODY ELEMENTS FORMATTING*/
+
+#header {
+  background-color: #00adef;
+  height: 65px;
 }
+
+#logo-2 {
+  margin-left: 30px;
+}
+
+#logo-1 {
+  height: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -150px;
+  right: 16px;
+  padding-bottom: 10px;
+  transform: rotate(7deg);
+}
+
 
 .panel-title {
   font-size: 35px;
 }
 
-p {
-  font-family: 'Poppins', sans-serif;
+#right-panel {
+  background-color: #5078c6;
+}
+
+.panel-default>.panel-heading {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.panel-heading {
+  border-bottom: 1px solid transparent;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0px;
+   border-radius: 4px;
+}
+
+.panel {
+     background-color: transparent;
+     border: 0;
+     border-radius: 4px;
 }
 
 .area {
@@ -21,8 +58,14 @@ p {
   padding: 10px 0 10px
 }
 
+/*#pac-input {
+  margin: 5px 0 15px 0;
+}*/
+
 .btn {
-  padding: 6px;
+  margin: 5px 2px 15px 2px;
+  background-color: #007e67;
+  border-width: 0;
 }
 
 #find-me {
@@ -32,15 +75,40 @@ p {
 }
 
 #location {
-  font-size: 35px;
+  font-size: 78px;
+  left: 98px;
+  top: 279px;
   border-radius: 50%;
-  margin: 40px;
+  position: absolute;
+  z-index: 1;
+  letter-spacing: -4.7px;
+  color: black;
+  font-weight: bolder;
+  font-family: 'Podkova', serif;
+}
+
+#forecast-icon {
+  position: absolute;
+  z-index: 1;
+}
+
+#pollution {
+  position: absolute;
+  z-index: 1;
+  height: 100px;
+}
+
+.white-circles {
+  position: relative;
+  top: 10px;
 }
 
 .humidity {
   font-size: 35px;
   border-radius: 50%;
-  margin: 40px;
+  margin: 18px;
+  position: absolute;
+  z-index: 1;
 }
 
 img {
@@ -57,4 +125,64 @@ code {
   width: 170px;
   background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
   border-radius: 50%;
+}
+
+#background-img {
+  background-image: url("images/sunnybackground.jpeg");
+  background-repeat:no-repeat;
+  width: 100%;
+  length: auto;
+  z-index: -1;
+}
+
+body {
+    background: no-repeat fixed center;
+}
+
+.choices {
+  background-color: white;
+  border-radius: 5px;
+}
+
+/*FONT ELEMENTS FORMATTING*/
+h1 {
+  font-family: 'Suez One', serif;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+
+h2, h3, h4 {
+  font-family: 'Podkova', serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+.weather-title {
+  font-size: 20px;
+}
+
+#city-area {
+  color: #007e67;
+}
+
+.font-color {
+  color: white;
+}
+
+.bold-me {
+  font-weight: bolder;
+}
+
+#user-name {
+ color: #007e67;
+ font-size: 30px
+}
+
+#overall-results {
+  line-height: 23px;
+  font-size: 20px;
+  right-margin: 10px;
 }
