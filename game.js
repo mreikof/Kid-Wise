@@ -231,7 +231,7 @@ function getDressed() {
   for (var i = 0; i < girlclothes.hotWeather.length; i++) {
     if (todayTemps > 80) {
       $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
-      
+
       displayImage(girlclothes.hotWeatherCat[i], girlclothes.hotWeatherCat[i] + "-" + i, girlclothes.hotWeather[i]);
     } else if ( todayTemps > 60) {
       $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");

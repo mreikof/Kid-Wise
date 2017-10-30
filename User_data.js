@@ -19,9 +19,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 database.ref("/userNumber").on("value", function(snapshot) {
-  	
+
   	if (snapshot.child("users").exists()) {
-  		
+
   		userCounter = snapshot.val().users;
   	}
 
@@ -42,37 +42,38 @@ database.ref("/userData" + userCounter).on("value", function(snapshot) {
   else{
     window.location.href = "singup.html";
   }
-   
+
 
 
 $("#submit").on("click", function(event) {
     event.preventDefault();
-    
+
     userCounter++;
-    
+
     var newName = $("#name").val().trim();
     var newLocation = $("#cityState").val().trim();
     var newGender;
 
     if ($("#girl").prop("checked")) {
-      newGender = "girl"
+      newGender = "girl";
     }
 
     else if ($("#boy").prop("checked")) {
-      newGender = "boy"
+      newGender = "boy";
     }
 
     localStorage.setItem("User-ID", userCounter);
-    
+
     var newUser = {
       name: newName,
       gender: newGender,
       location: newLocation,
       id: userCounter
     };
-    
+
     database.ref("/userData" + userCounter).set(newUser);
     database.ref("/userNumber").set({
     	users: userCounter
     });
   });
+});
