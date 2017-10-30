@@ -14,7 +14,7 @@ font-family: 'Lato', sans-serif; Everywhere else */
 }
 
 #logo-1 {
-  height: 250px;
+  height: 210px;
   z-index: 1;
   position: absolute;
   top: -150px;
@@ -50,6 +50,10 @@ font-family: 'Lato', sans-serif; Everywhere else */
      border-radius: 4px;
 }
 
+.title-all {
+  margin-bottom: -10px;
+}
+
 .area {
   padding: 10px 0 10px 0;
 }
@@ -57,10 +61,6 @@ font-family: 'Lato', sans-serif; Everywhere else */
 .padme {
   padding: 10px 0 10px
 }
-
-/*#pac-input {
-  margin: 5px 0 15px 0;
-}*/
 
 .btn {
   margin: 5px 2px 15px 2px;
@@ -122,16 +122,21 @@ code {
 }
 
 .icons {
-  width: 170px;
+  width: 100px;
   background-image: url("http://cliparts101.com/files/411/6D9F0580A8672AFCEF4E28238FB092E9/Cartoon_Cloud.png");
   border-radius: 50%;
 }
 
+.form-objects {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #background-img {
-  background-image: url("images/sunnybackground.jpeg");
+  /*background-image: url("images/sunnybackground.jpeg");*/
   background-repeat:no-repeat;
   width: 100%;
-  length: auto;
+  height: auto;
   z-index: -1;
 }
 
@@ -185,4 +190,8 @@ p {
   line-height: 23px;
   font-size: 20px;
   right-margin: 10px;
+}
+
+form {
+    margin-left: 20px;
 }
