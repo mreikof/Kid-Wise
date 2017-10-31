@@ -1,9 +1,43 @@
-//Declare global variables here
+/////////Declare global variables here//////////////
 var todayTemps;
 var todayForecast;
 var show;
 var lon;
 var lat;
+
+var name;
+var location;
+var gender;
+////////////////////////////////////////////////////
+
+////////////////SIGN UP SCREEN//////////////////////
+
+//------ functions ---------//
+function goToIndex()
+{
+    var url = "index.html";
+    window.open(url);
+}
+
+function clearInput(){
+    var1.value = '';
+}
+
+
+$("#personalize").on("click", function(event) {
+  // goToIndex();
+name = document.getElementById("#name").value;
+location = document.getElementById("#cityState").value;
+gender = document.getElementById(".genderCheckbox").checked;
+console.log(name);
+console.log(location);
+console.log(gender);
+});
+
+
+
+////////////////WEATHER RESULTS PANEL//////////////////////
+
 
 $("#today").on("click", function(event) {
   event.preventDefault();
@@ -199,6 +233,10 @@ $("#third").on("click", function(event) {
     });
   });
 });
+
+
+////////////////MAIN PANEL RESULTS//////////////////////
+
 
 function getDressed() {
   var character = ["girl.png", "boy.png"];

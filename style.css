@@ -23,6 +23,10 @@ font-family: 'Lato', sans-serif; Everywhere else */
   transform: rotate(7deg);
 }
 
+.btn-radio {
+	width: 100%;
+}
+
 
 .panel-title {
   font-size: 35px;
