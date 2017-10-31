@@ -101,7 +101,6 @@ font-family: 'Lato', sans-serif; Everywhere else */
   z-index: 1;
   height: 100px;
 }
-
 .white-circles {
   position: relative;
   top: 10px;
@@ -190,7 +189,7 @@ p {
  font-size: 30px
 }
 
-#overall-results {
+#overall-results{
   line-height: 23px;
   font-size: 20px;
   right-margin: 10px;
