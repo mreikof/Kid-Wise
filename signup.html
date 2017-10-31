@@ -34,95 +34,115 @@
 
     <!-- Area where the search bar and buttons on left side are located -->
     <div class="row">
-        <div class="col-lg-3">
-            <form class="form-inline text-center">
-               <input class="form-control" id="pac-input" type="text" placeholder="Where do you live?" aria-label="Search">
-            </form>
-          <div class="text-center">
-            <input class="btn btn-primary" id="today" type="button" value="Today">
-            <input class="btn btn-primary" id="tmrw" type="button" value="Next Day">
-            <input class="btn btn-primary" id="third" type="button" value="3-Day">
-          </div>
+      <div class="col-lg-3">
+        <form class="form-inline text-center">
+          <input class="form-control" id="pac-input" type="text" placeholder="Where do you live?" aria-label="Search">
+        </form>
+        <div class="text-center">
+          <input class="btn btn-primary" id="today" type="button" value="Today">
+          <input class="btn btn-primary" id="tmrw" type="button" value="Next Day">
+          <input class="btn btn-primary" id="third" type="button" value="3-Day">
         </div>
-
-          <div class="col-lg-9" id="name-area">
-              <h1 id="user-name"></h1>
-          </div>
       </div>
 
+      <div class="col-lg-9" id="name-area">
+        <h1 id="user-name"></h1>
+      </div>
+    </div>
 
 
 
+
+    <div class="row">
+      <!-- Left Panel - Weather & allergen results here  -->
       <div class="row">
         <!-- Left Panel - Weather & allergen results here  -->
-        <div class="row">
-          <!-- Left Panel - Weather & allergen results here  -->
-          <div class="col-lg-3" id="right-panel">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h1 class="weather-title">Welcome to Weather Wise!</h1>
-                  <h1 id="city-area"></h1>
-                  <hr>
-                <h5 class="bold-me"><h5 id="children"></h5></h5>
+        <div class="col-lg-3" id="right-panel">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h1 class="weather-title">Welcome to Weather Wise!</h1>
+              <h1 id="city-area"></h1>
+              <hr>
+              <h5 class="bold-me"><h5 id="children"></h5></h5>
+            </div>
+            <div class="panel-body text-center">
+              <div class="temp area">
+                <h5 class="font-color title-all">TEMPERATURE:</h5>
+                <!-- <a id="location"><img src="sunCloud.png" width="150" height="140"></a> -->
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
               </div>
-              <div class="panel-body text-center">
-                <div class="temp area">
-                  <h5 class="font-color title-all">TEMPERATURE:</h5>
-                  <!-- <a id="location"><img src="sunCloud.png" width="150" height="140"></a> -->
-                  <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
-                </div>
-                <div class="forecast area">
-                  <h5 class="font-color title-all">FORECAST:</h5>
-                  <!-- <a class="icon" id="forecast-icon"><img src="http://tpalsson.com/wp-content/uploads/2016/04/Rainy-Day.png" width="150" height="140"></a> -->
-                  <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
-                  <!-- <h5 class="font-color" id="forecast-desc"></h5> -->
-                </div>
-                <div class="air area">
-                  <h5 class="font-color title-all">HUMIDITY:</h5>
-                  <!-- <a class="humidity"><img src="tempSun.png" width="120" height="120"></a> -->
-                  <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
-                  <!-- <h5 class="font-color" id="air-desc"></h5> -->
-                </div>
-                <div class="allergies area">
-                  <h5 class="font-color title-all" id="pollen-desc">AIR QUALITY:</h5>
-                  <!-- <a id="pollution"><img src="https://i0.wp.com/hewittchamber.com/wp-content/uploads/2016/04/Earth-Day.png" width="150" height="160"></a> -->
-                  <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
-                  <!-- <h5 class="font-color" id="quality"></h5> -->
-                </div>
+              <div class="forecast area">
+                <h5 class="font-color title-all">FORECAST:</h5>
+                <!-- <a class="icon" id="forecast-icon"><img src="http://tpalsson.com/wp-content/uploads/2016/04/Rainy-Day.png" width="150" height="140"></a> -->
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
+                <!-- <h5 class="font-color" id="forecast-desc"></h5> -->
+              </div>
+              <div class="air area">
+                <h5 class="font-color title-all">HUMIDITY:</h5>
+                <!-- <a class="humidity"><img src="tempSun.png" width="120" height="120"></a> -->
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
+                <!-- <h5 class="font-color" id="air-desc"></h5> -->
+              </div>
+              <div class="allergies area">
+                <h5 class="font-color title-all" id="pollen-desc">AIR QUALITY:</h5>
+                <!-- <a id="pollution"><img src="https://i0.wp.com/hewittchamber.com/wp-content/uploads/2016/04/Earth-Day.png" width="150" height="160"></a> -->
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
+                <!-- <h5 class="font-color" id="quality"></h5> -->
               </div>
             </div>
           </div>
+        </div>
         <div class="col-lg-1 margin">
         </div>
         <div class="col-lg-8 margin">
           <div class="panel-heading">
             <a><img id="logo-1" src="images/logo.png"></a>
             <h1 class="panel-title">Let's get you signed-up.</h1>
-            <h4>By saving your information, you'll see your name and your character pop up on the results area!</h4>
+            <h4>By saving your information, you'll see your name </h4>
+            <h4>and your character pop up on the results area!</h4>
           </div>
           <form>
-              <div class="form-group">
-                <label for="name">What is your name?</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-              </div>
-              <div class="form-check form-objects">
-                <h3> Which gender are you? </h3>
-                <label class="form-check-label text-center form-objects" id="girl">
-                   <input type="image" src="smiling-girl.png" alt="" id="img-clck">  <br>
+            <div class="form-group">
+              <label for="name">What is your name?</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="startDate">Where do you live?</label>
+              <input type="text" class="form-control" id="cityState" placeholder="City, State">
+            </div>
+
+            <!-- <div class="form-check form-objects" id="form-gender">
+              <h3> Which gender are you? </h3>
+              <label class="form-check-label text-center form-objects" id="girl">
+                   <input type="image" src="smiling-girl.png" alt="girl" id="img-clck-girl">  <br>
                   I'm a GIRL!
                 </label>
-                <label class="form-check-label text-center form-objects" id="boy">
-                   <input type="image" src="boy-broad-smile.png" alt="" id="img-clck"> <br>
+              <label class="form-check-label text-center form-objects" id="boy">
+                   <input type="image" src="boy-broad-smile.png" alt="boy" id="img-clck-boy"> <br>
                   I'm a BOY!
                 </label>
-              </div>
-              <div class="form-group">
-                <label for="startDate">Where do you live?</label>
-                <input type="text" class="form-control" id="cityState" placeholder="City, State">
+            </div> -->
 
+            <div class="row">
+              <div class="col-xs-2">
               </div>
-              <button type="submit" class="btn btn-primary" id="submit">Personalize Me!</button>
-              </form>
+        			<div class="col-xs-3">
+        				<img src="smiling-girl.png" class="img-responsive img-radio">
+        				<button type="button" class="btn btn-primary btn-radio text-center">I'm a Girl!</button>
+        				<input type="checkbox" class="gender-checkbox hidden" id="girl" value="girl">
+        			</div>
+        			<div class="col-xs-2">
+        			</div>
+        			<div class="col-xs-3">
+        				<img src="boy-broad-smile.png" class="img-responsive img-radio">
+        				<button type="button" class="btn btn-primary btn-radio text-center">I'm a Boy!</button>
+        				<input type="checkbox" class="gender-checkbox hidden" id="boy" value="boy">
+        			</div>
+              <div class="col-xs-2">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="personalize">Personalize Me!</button>
+          </form>
         </div>
       </div>
     </div>
