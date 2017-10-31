@@ -199,27 +199,7 @@ $("#third").on("click", function(event) {
   });
 });
 
-function displayImage(placement, id, src) {
-  $(placement).append("<img id='" + id + "' src='images/" + src + "' height='100px' width='auto'>");
-}
-
 function getDressed() {
-
-  var girlclothes = {
-    hotWeather: ["girlDress1.png", "girlTank1.png", "boyShorts1.png", "girlSkirt1.png", "girlHat1.png", "boyHat2.png"],
-    hotWeatherCat: ["#tops", "#tops", "#bottoms", "#bottoms", "#accessories-1", "#accessories-1"],
-    coldWeather: ["girlShirt1.png", "girlShirt2.png", "boyPants1.png", "boyPants2.png", "boyHat2.png"],
-    coldWeatherCat: ["#tops", "#tops", "#bottoms", "#bottoms", "#accessories-1"],
-    colderWeather: ["girlShirt2.png", "girlShirt3.png", "boyPants1.png", "boyPants2.png", "scarf2.png"],
-    colderWeatherCat: ["#tops", "#tops", "#bottoms", "#bottoms", "#accessories-1"]
-  };
-
-  var boyclothes = {
-    hotWeather: ["boyTshirt1.png", "boyTshirt2.png", "boyShorts1.png", "boyShorts2.png", "boyHat1.png", "boyHat2.png"],
-    coldWeather: ["boyShirt1.png", "boyTshirt2.png", "boyPants1.png", "boyPants2.png"],
-    colderWeather: ["boyShirt2.png", "boyShirt3.png", "boyPants1.png", "boyPants2.png", "scarf1.png"]
-  };
-
   var character = ["girl.png", "boy.png"];
   var genderClothes = "girlclothes";
 
@@ -228,47 +208,52 @@ function getDressed() {
   //build conditionals that displays the correct graphics
   $("#character").append("<img id='gender' src='images/girl2.png' height='500px' width='auto'>");
 
-  for (var i = 0; i < girlclothes.hotWeather.length; i++) {
-    if (todayTemps > 80) {
+
+  if (todayTemps > 80) {
       $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
 
-      displayImage(girlclothes.hotWeatherCat[i], girlclothes.hotWeatherCat[i] + "-" + i, girlclothes.hotWeather[i]);
+      $("#background-img").css("background-image", 'url("images/sunnybackground.jpeg")');
+
+      $("#tops").append("<h4 class='text-center'> Choose a SHORT-SLEEVED top like this one: </h4>");
+      $("#tops").append("<img class='text-center' src='images/boyTshirt1.png' height='120px' width='auto' ></div>");
+      $("#bottoms").append("<h4 class='text-center'> Pick a pair of SHORTS like this one: </h4>");
+      $("#bottoms").append("<img class='text-center' src='images/boyShorts1.png' height='120px' width='auto' ></div>");
+      $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the sun! </h4>");
+      $("#accessories-1").append("<img class='text-center' src='images/girlHat1.png' height='120px' width='auto' ></div>");
+
+
     } else if ( todayTemps > 60) {
       $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");
 
-      displayImage(girlclothes.coldWeatherCat[i], girlclothes.coldWeatherCat[i] + "-" + i, girlclothes.coldWeather[i]);
+      $("#background-img").css("background-image", 'url("images/autumn_background.jpg")');
 
+      $("#tops").append("<h4 class='text-center'> Choose a LONG-SLEEVED top like this one: </h4>");
+      $("#tops").append("<img class='text-center' src='images/girlShirt1.png' height='120px' width='auto' ></div>");
+      $("#bottoms").append("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+      $("#bottoms").append("<img class='text-center' src='images/girlPants1.png' height='140px' width='auto' ></div>");
+      $("#accessories-1").append("<h4 class='text-center'> Shield yourself from the cold! </h4>");
+      $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto' ></div>");
 
     } else if (todayTemps > 30) {
       $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Pick long-sleeved tops, long pants and throw on a scarf!");
 
-      displayImage(girlclothes.colderWeatherCat[i], girlclothes.colderWeatherCat[i] + "-" + i, girlclothes.colderWeather[i]);
+      $("#background-img").css("background-image", 'url("images/background.Sky.jpg")');
+
+      $("#tops").html("<h4 class='text-center'> Choose a SWEATER like this one: </h4>");
+      $("#tops").html("<img class='text-center' src='images/girlShirt3.png' height='120px' width='auto' ></div>");
+      $("#bottoms").html("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+      $("#bottoms").html("<img class='text-center' src='images/girlPants2.png' height='120px' width='auto' ></div>");
+      $("#accessories-1").html("<h4 class='text-center'> Protect yourself from the freezing temps! </h4>");
+      $("#accessories-1").html("<img class='text-center' src='images/scarf1.png' height='120px' width='auto'></div>");
     } else {
       alert("Oops");
     }
-  }
 }
+
 // Function to clear out the right side panel - the clothes choices - should the user want to try a different location
 function getClear() {
-  $("#tops-0").html(" ");
-  $("#tops-1").html(" ");
-  $("#bottoms-2").html(" ");
-  $("#bottoms-3").html(" ");
-  $("#accessories-1-4").html(" ");
-  $("#accessories-2-5").html(" ");
+  $("#tops").html(" ");
+  $("#bottoms").html(" ");
+  $("#accessories-1").html(" ");
   $("#character").html(" ");
-}
-//Function to drag clothing images to image body
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
 }

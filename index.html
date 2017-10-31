@@ -64,26 +64,26 @@
             </div>
             <div class="panel-body text-center">
               <div class="temp area">
-                <h5 class="font-color">TEMPERATURE:</h5>
-                <a id="location"><img src="sunCloud.png" width="150" height="140"></a><br>
-                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
+                <h5 class="font-color title-all">TEMPERATURE:</h5>
+                <a id="location"><img src="sunCloud.png" width="150" height="140"></a>
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
               </div>
               <div class="forecast area">
-                <h5 class="font-color">FORECAST:</h5>
+                <h5 class="font-color title-all">FORECAST:</h5>
                 <a class="icon" id="forecast-icon"><img src="http://tpalsson.com/wp-content/uploads/2016/04/Rainy-Day.png" width="150" height="140"></a>
-                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a><br>
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
                 <h5 class="font-color" id="forecast-desc"></h5>
               </div>
               <div class="air area">
-                <h5 class="font-color">HUMIDITY:</h5>
+                <h5 class="font-color title-all">HUMIDITY:</h5>
                 <a class="humidity"><img src="tempSun.png" width="120" height="120"></a>
-                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
                 <h5 class="font-color" id="air-desc"></h5>
               </div>
               <div class="allergies area">
-                <h5 class="font-color" id="pollen-desc">AIR QUALITY:</h5>
+                <h5 class="font-color title-all" id="pollen-desc">AIR QUALITY:</h5>
                 <a id="pollution"><img src="https://i0.wp.com/hewittchamber.com/wp-content/uploads/2016/04/Earth-Day.png" width="150" height="160"></a>
-                <a class="white-circles"><img src="images/white-circle.png" width="150" height="140"></a>
+                <a class="white-circles"><img src="images/white-circle.png" width="120" height="120"></a>
                 <h5 class="font-color" id="quality"></h5>
               </div>
             </div>
@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="panel-heading">
-                        <p class="panel-title" id="overall-results">placeholder</p>
+                        <p class="panel-title" id="overall-results"></p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -109,40 +109,18 @@
               </div>
             </div>
             <div class="col-lg-4">
-              <div class="choices">
-                <code class="padme" id="tops">
-                <h4 class="text-center"> Pick a TOP </h4>
-                </code>
-                <!-- <p>placeholder</p> -->
-                <code class="padme" id="bottoms">
-                <h4 class="text-center"> Pick a BOTTOM </h4>
-                </code>
-                <!-- <p>placeholder</p> -->
-                <code class="padme" id="accessories-1">
-                <h4 class="text-center"> Pick an ACCESSORY </h4>
-                </code>
-                <!-- <p>placeholder</p> -->
-                <code class="padme" id="accessories-2">
-                </code>
-                <!-- <p>placeholder</p> -->
-                <code class="padme" id="footwear">
-                </code>
+              <div class="choices" id="div1">
+                <div class="padme text-center" id="tops">
+                </div>
+                <div class="padme text-center" id="bottoms">
+                </div>
+                <div class="padme text-center" id="accessories-1">
+                </div>
               </div>
             </div>
           </div>
 
         </div>
-        <!--drag and drop events-->
-        <!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-        <img id="child" src="images/boy1.png" draggable="true"
-        ondragstart="drag(event)" width="200" height="250">
-        <img id="accessories" src="images/boyShirt1.png" draggable="true"
-        ondragstart="drag(event)" width="200" height="70">
-        <img id="accessories" src="images/boyPants1.png" draggable="true"
-        ondragstart="drag(event)" width="125" height="90">
-        <img id="accessories" src="images/boyShorts1.png" draggable="true"
-        ondragstart="drag(event)" width="135" height="70"> -->
 
         <script src="game.js"></script>
 </body>
