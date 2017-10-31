@@ -20,15 +20,25 @@ function goToIndex()
 }
 
 function clearInput(){
-    var1.value = '';
+    $("#name").val(" ");
+    $("#cityState").val(" ");
 }
 
-
 $("#personalize").on("click", function(event) {
-  // goToIndex();
-name = document.getElementById("#name").value;
-location = document.getElementById("#cityState").value;
-gender = document.getElementById(".genderCheckbox").checked;
+  goToIndex();
+
+  name = $("#name").val();
+  location = $("#cityState").val();
+
+  if ($('#girl-check').is(":checked")) {
+    gender = "girl";
+  } else if ($('#boy-check').is(":checked")) {
+    gender = "boy";
+  } else {
+    gender = "unknown";
+  }
+
+
 console.log(name);
 console.log(location);
 console.log(gender);
