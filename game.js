@@ -1,9 +1,43 @@
-//Declare global variables here
+/////////Declare global variables here//////////////
 var todayTemps;
 var todayForecast;
 var show;
 var lon;
 var lat;
+
+var name;
+var location;
+var gender;
+////////////////////////////////////////////////////
+
+////////////////SIGN UP SCREEN//////////////////////
+
+//------ functions ---------//
+function goToIndex()
+{
+    var url = "index.html";
+    window.open(url);
+}
+
+function clearInput(){
+    var1.value = '';
+}
+
+
+$("#personalize").on("click", function(event) {
+  // goToIndex();
+name = document.getElementById("#name").value;
+location = document.getElementById("#cityState").value;
+gender = document.getElementById(".genderCheckbox").checked;
+console.log(name);
+console.log(location);
+console.log(gender);
+});
+
+
+
+////////////////WEATHER RESULTS PANEL//////////////////////
+
 
 $("#today").on("click", function(event) {
   event.preventDefault();
@@ -21,6 +55,7 @@ $("#today").on("click", function(event) {
     $("#location").text(parseInt(response.list[0].temp.day) + "°");
     $("#forecast-desc").text(response.list[0].weather[0].main + ", " + response.list[0].weather[0].description);
     $("#air-desc").text(response.list[0].humidity + "%");
+    // $("#humid").html("<img  src='tempsun.png'>");
     var icon = response.list[0].weather[0].icon;
     var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
     $(".icon").html("<img class=icons src='" + iconUrl + "'>");
@@ -63,7 +98,7 @@ $("#today").on("click", function(event) {
         $("#pollution").html("<img class=icons src='" + fourth + "'>");
       } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
         $("#pollution").html("<img class=icons src='" + fifth + "'>");
-      } else if(response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
+      } else if (response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
         $("#pollution").html("<img class=icons src='" + six + "'>");
       }
 
@@ -86,7 +121,7 @@ $("#tmrw").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(parseInt(response.list[0].temp.day) + "°");
+    $("#location").text(parseInt(response.list[1].temp.day) + "°");
     $("#forecast-desc").text(response.list[1].weather[0].main + ", " + response.list[1].weather[0].description);
     $("#air-desc").text(response.list[1].humidity + "%");
     var icon = response.list[1].weather[0].icon;
@@ -118,19 +153,19 @@ $("#tmrw").on("click", function(event) {
       var fifth = "http://html-color.org/81DD38.jpg";
       var sixth = "http://www.colorhexa.com/009e3a.png";
       // Writing the if/else statement for the air quality output
-        if (response.breezometer_aqi === 0) {
-          $("#pollution").html("<img class=icons src='" + first + "'>");
-        } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
-          $("#pollution").html("<img class=icons src='" + second + "'>");
-        } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
-          $("#pollution").html("<img class=icons src='" + third + "'>");
-        } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
-          $("#pollution").html("<img class=icons src='" + fourth + "'>");
-        } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
-          $("#pollution").html("<img class=icons src='" + fifth + "'>");
-        } else if(response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
-          $("#pollution").html("<img class=icons src='" + six + "'>");
-        }
+      if (response.breezometer_aqi === 0) {
+        $("#pollution").html("<img class=icons src='" + first + "'>");
+      } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
+        $("#pollution").html("<img class=icons src='" + second + "'>");
+      } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
+        $("#pollution").html("<img class=icons src='" + third + "'>");
+      } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
+        $("#pollution").html("<img class=icons src='" + fourth + "'>");
+      } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
+        $("#pollution").html("<img class=icons src='" + fifth + "'>");
+      } else if (response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
+        $("#pollution").html("<img class=icons src='" + six + "'>");
+      }
     });
   });
 });
@@ -149,7 +184,7 @@ $("#third").on("click", function(event) {
     method: "GET"
   }).done(function(response) {
     console.log(response);
-    $("#location").text(parseInt(response.list[0].temp.day) + "°");
+    $("#location").text(parseInt(response.list[2].temp.day) + "°");
     $("#forecast-desc").text(response.list[2].weather[0].main + ", " + response.list[2].weather[0].description);
     $("#air-desc").text(response.list[2].humidity + "%");
     var icon = response.list[2].weather[0].icon;
@@ -182,22 +217,26 @@ $("#third").on("click", function(event) {
       var fifth = "http://html-color.org/81DD38.jpg";
       var sixth = "http://www.colorhexa.com/009e3a.png";
       // Writing the if/else statement for the air quality output
-        if (response.breezometer_aqi === 0) {
-          $("#pollution").html("<img class=icons src='" + first + "'>");
-        } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
-          $("#pollution").html("<img class=icons src='" + second + "'>");
-        } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
-          $("#pollution").html("<img class=icons src='" + third + "'>");
-        } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
-          $("#pollution").html("<img class=icons src='" + fourth + "'>");
-        } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
-          $("#pollution").html("<img class=icons src='" + fifth + "'>");
-        } else if(response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
-          $("#pollution").html("<img class=icons src='" + six + "'>");
-        }
+      if (response.breezometer_aqi === 0) {
+        $("#pollution").html("<img class=icons src='" + first + "'>");
+      } else if (response.breezometer_aqi > 0 && response.breezometer_aqi <= 20) {
+        $("#pollution").html("<img class=icons src='" + second + "'>");
+      } else if (response.breezometer_aqi > 20 && response.breezometer_aqi <= 40) {
+        $("#pollution").html("<img class=icons src='" + third + "'>");
+      } else if (response.breezometer_aqi > 40 && response.breezometer_aqi <= 60) {
+        $("#pollution").html("<img class=icons src='" + fourth + "'>");
+      } else if (response.breezometer_aqi > 60 && response.breezometer_aqi <= 80) {
+        $("#pollution").html("<img class=icons src='" + fifth + "'>");
+      } else if (response.breezometer_aqi > 80 && response.breezometer_aqi <= 100) {
+        $("#pollution").html("<img class=icons src='" + six + "'>");
+      }
     });
   });
 });
+
+
+////////////////MAIN PANEL RESULTS//////////////////////
+
 
 function getDressed() {
   var character = ["girl.png", "boy.png"];
@@ -210,44 +249,42 @@ function getDressed() {
 
 
   if (todayTemps > 80) {
-      $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
+    $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
+    $("#background-img").css("background-image", 'url("images/sunnybackground.jpeg")');
 
-      $("#background-img").css("background-image", 'url("images/sunnybackground.jpeg")');
+    $("#tops").append("<h4 class='text-center'> Choose a SHORT-SLEEVED top like this one: </h4>");
+    $("#tops").append("<img class='text-center' src='images/boyTshirt1.png' height='120px' width='auto' ></div>");
+    $("#bottoms").append("<h4 class='text-center'> Pick a pair of SHORTS like this one: </h4>");
+    $("#bottoms").append("<img class='text-center' src='images/boyShorts1.png' height='120px' width='auto' ></div>");
+    $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the sun! </h4>");
+    $("#accessories-1").append("<img class='text-center' src='images/girlHat1.png' height='120px' width='auto' ></div>");
 
-      $("#tops").append("<h4 class='text-center'> Choose a SHORT-SLEEVED top like this one: </h4>");
-      $("#tops").append("<img class='text-center' src='images/boyTshirt1.png' height='120px' width='auto' ></div>");
-      $("#bottoms").append("<h4 class='text-center'> Pick a pair of SHORTS like this one: </h4>");
-      $("#bottoms").append("<img class='text-center' src='images/boyShorts1.png' height='120px' width='auto' ></div>");
-      $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the sun! </h4>");
-      $("#accessories-1").append("<img class='text-center' src='images/girlHat1.png' height='120px' width='auto' ></div>");
+  } else if (todayTemps > 60) {
+    $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");
 
+    $("#background-img").css("background-image", 'url("images/autumn_background.jpg")');
 
-    } else if ( todayTemps > 60) {
-      $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");
+    $("#tops").append("<h4 class='text-center'> Choose a LONG-SLEEVED top like this one: </h4>");
+    $("#tops").append("<img class='text-center' src='images/girlShirt1.png' height='120px' width='auto' ></div>");
+    $("#bottoms").append("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+    $("#bottoms").append("<img class='text-center' src='images/girlPants1.png' height='140px' width='auto' ></div>");
+    $("#accessories-1").append("<h4 class='text-center'> Shield yourself from the cold! </h4>");
+    $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto' ></div>");
 
-      $("#background-img").css("background-image", 'url("images/autumn_background.jpg")');
+  } else if (todayTemps > 30) {
+    $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Pick long-sleeved tops, long pants and throw on a scarf!");
 
-      $("#tops").append("<h4 class='text-center'> Choose a LONG-SLEEVED top like this one: </h4>");
-      $("#tops").append("<img class='text-center' src='images/girlShirt1.png' height='120px' width='auto' ></div>");
-      $("#bottoms").append("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
-      $("#bottoms").append("<img class='text-center' src='images/girlPants1.png' height='140px' width='auto' ></div>");
-      $("#accessories-1").append("<h4 class='text-center'> Shield yourself from the cold! </h4>");
-      $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto' ></div>");
+    $("#background-img").css("background-image", 'url("images/background.Sky.jpg")');
 
-    } else if (todayTemps > 30) {
-      $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Pick long-sleeved tops, long pants and throw on a scarf!");
-
-      $("#background-img").css("background-image", 'url("images/background.Sky.jpg")');
-
-      $("#tops").html("<h4 class='text-center'> Choose a SWEATER like this one: </h4>");
-      $("#tops").html("<img class='text-center' src='images/girlShirt3.png' height='120px' width='auto' ></div>");
-      $("#bottoms").html("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
-      $("#bottoms").html("<img class='text-center' src='images/girlPants2.png' height='120px' width='auto' ></div>");
-      $("#accessories-1").html("<h4 class='text-center'> Protect yourself from the freezing temps! </h4>");
-      $("#accessories-1").html("<img class='text-center' src='images/scarf1.png' height='120px' width='auto'></div>");
-    } else {
-      alert("Oops");
-    }
+    $("#tops").html("<h4 class='text-center'> Choose a SWEATER like this one: </h4>");
+    $("#tops").html("<img class='text-center' src='images/girlShirt3.png' height='120px' width='auto' ></div>");
+    $("#bottoms").html("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+    $("#bottoms").html("<img class='text-center' src='images/girlPants2.png' height='120px' width='auto' ></div>");
+    $("#accessories-1").html("<h4 class='text-center'> Protect yourself from the freezing temps! </h4>");
+    $("#accessories-1").html("<img class='text-center' src='images/scarf1.png' height='120px' width='auto'></div>");
+  } else {
+    alert("Oops");
+  }
 }
 
 // Function to clear out the right side panel - the clothes choices - should the user want to try a different location
@@ -256,4 +293,5 @@ function getClear() {
   $("#bottoms").html(" ");
   $("#accessories-1").html(" ");
   $("#character").html(" ");
+
 }
