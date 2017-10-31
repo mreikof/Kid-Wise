@@ -13,15 +13,14 @@ var gender;
 ////////////////SIGN UP SCREEN//////////////////////
 
 //------ functions ---------//
-function goToIndex()
-{
-    var url = "index.html";
-    window.open(url);
+function goToIndex() {
+  var url = "index.html";
+  window.open(url);
 }
 
-function clearInput(){
-    $("#name").val(" ");
-    $("#cityState").val(" ");
+function clearInput() {
+  $("#name").val(" ");
+  $("#cityState").val(" ");
 }
 
 $("#personalize").on("click", function(event) {
@@ -39,9 +38,9 @@ $("#personalize").on("click", function(event) {
   }
 
 
-console.log(name);
-console.log(location);
-console.log(gender);
+  console.log(name);
+  console.log(location);
+  console.log(gender);
 });
 
 
