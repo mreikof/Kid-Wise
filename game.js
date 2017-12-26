@@ -36,13 +36,13 @@ $("#personalize").on("click", function(event) {
   } else {
     gender = "unknown";
   }
-
-
   console.log(name);
   console.log(location);
   console.log(gender);
-});
 
+
+
+});
 
 
 ////////////////WEATHER RESULTS PANEL//////////////////////
@@ -54,7 +54,7 @@ $("#today").on("click", function(event) {
   var city = $("#pac-input").val();
   console.log(city);
   $("#city-area").text(city);
-  var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&appid=166a433c57516f51dfab1f7edaed8413";
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&APPID=166a433c57516f51dfab1f7edaed8413";
   // ajax call
   $.ajax({
     url: queryURL,
@@ -88,7 +88,8 @@ $("#today").on("click", function(event) {
       console.log(response.random_recommendations.children);
       console.log(response.breezometer_color);
       $("#quality").text(response.breezometer_description);
-      $("#children").text(response.random_recommendations.children + ".");
+      // $("#children").text("Parent Alert : " + response.random_recommendations.children + ".");
+      $("#children").append("<h3 class='parent-font'>Parent Alert :</h3><h4 class='message-font'> " +  response.random_recommendations.children + "</h4>");
       // declaring variables for the air quality images
       var first = "http://www.colorhexa.com/800000.png";
       var second = "http://www.colorhexa.com/fe4600.png";
@@ -123,7 +124,7 @@ $("#tmrw").on("click", function(event) {
   console.log(city);
   $("#city-area").text(city);
 
-  var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&appid=166a433c57516f51dfab1f7edaed8413";
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&APPID=166a433c57516f51dfab1f7edaed8413";
   // ajax call
   $.ajax({
     url: queryURL,
@@ -153,7 +154,8 @@ $("#tmrw").on("click", function(event) {
       console.log(response.breezometer_aqi);
       console.log(response.random_recommendations.children);
       $("#quality").text(response.breezometer_description);
-      $("#children").text(response.random_recommendations.children + ".");
+      // $("#children").text("Parent Alert : " + response.random_recommendations.children + ".");
+      $("#children").append("<h3 class='parent-font'>Parent Alert :</h3><h4 class='message-font'> " +  response.random_recommendations.children + "</h4>");
       // declaring variables for the air quality images
       var first = "http://www.colorhexa.com/800000.png";
       var second = "http://www.colorhexa.com/fe4600.png";
@@ -186,7 +188,7 @@ $("#third").on("click", function(event) {
   var city = $("#pac-input").val();
   console.log(city);
   $("#city-area").text(city);
-  var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&appid=166a433c57516f51dfab1f7edaed8413";
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&units=imperial" + "&cnt=3" + "&APPID=166a433c57516f51dfab1f7edaed8413";
   // ajax call
   $.ajax({
     url: queryURL,
@@ -217,7 +219,8 @@ $("#third").on("click", function(event) {
       console.log(response.breezometer_aqi);
       console.log(response.random_recommendations.children);
       $("#quality").text(response.breezometer_description);
-      $("#children").text(response.random_recommendations.children + ".");
+      // $("#children").text("Parent Alert : " + response.random_recommendations.children + ".");
+      $("#children").append("<h3 class='parent-font'>Parent Alert :</h3><h4 class='message-font'> " +  response.random_recommendations.children + "</h4>");
       // declaring variables for the air quality images
       var first = "http://www.colorhexa.com/800000.png";
       var second = "http://www.colorhexa.com/fe4600.png";
@@ -246,20 +249,15 @@ $("#third").on("click", function(event) {
 
 ////////////////MAIN PANEL RESULTS//////////////////////
 
-
 function getDressed() {
-  var character = ["girl.png", "boy.png"];
-  var genderClothes = "girlclothes";
 
-  console.log(todayTemps);
-
+  var genderClothes = "girl";
   //build conditionals that displays the correct graphics
-  $("#character").append("<img id='gender' src='images/girl2.png' height='500px' width='auto'>");
 
-
-  if (todayTemps > 80) {
+  if ((todayTemps > 80) && (genderClothes === "girl")) {
     $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
     $("#background-img").css("background-image", 'url("images/sunnybackground.jpeg")');
+    $("#character").append("<img id='gender' src='images/girl3-summer-02.png' height='500px' width='auto'>");
 
     $("#tops").append("<h4 class='text-center'> Choose a SHORT-SLEEVED top like this one: </h4>");
     $("#tops").append("<img class='text-center' src='images/boyTshirt1.png' height='120px' width='auto' ></div>");
@@ -268,10 +266,11 @@ function getDressed() {
     $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the sun! </h4>");
     $("#accessories-1").append("<img class='text-center' src='images/girlHat1.png' height='120px' width='auto' ></div>");
 
-  } else if (todayTemps > 60) {
+  } else if ((todayTemps > 60) && (genderClothes === "girl")) {
     $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");
 
-    $("#background-img").css("background-image", 'url("images/autumn_background.jpg")');
+    $("#background-img").css("background-image", 'url("images/fallish.png")');
+    $("#character").append("<img id='gender' src='images/girl3-spring-02.png' height='500px' width='auto'>");
 
     $("#tops").append("<h4 class='text-center'> Choose a LONG-SLEEVED top like this one: </h4>");
     $("#tops").append("<img class='text-center' src='images/girlShirt1.png' height='120px' width='auto' ></div>");
@@ -280,21 +279,61 @@ function getDressed() {
     $("#accessories-1").append("<h4 class='text-center'> Shield yourself from the cold! </h4>");
     $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto' ></div>");
 
-  } else if (todayTemps > 30) {
+  } else if ((todayTemps > 0) && (genderClothes === "girl")) {
     $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Pick long-sleeved tops, long pants and throw on a scarf!");
 
-    $("#background-img").css("background-image", 'url("images/background.Sky.jpg")');
+    $("#background-img").css("background-image", 'url("images/winter.jpg")');
+    $("#character").append("<img id='gender' src='images/girl3-winter-02.png' height='500px' width='auto'>");
 
-    $("#tops").html("<h4 class='text-center'> Choose a SWEATER like this one: </h4>");
-    $("#tops").html("<img class='text-center' src='images/girlShirt3.png' height='120px' width='auto' ></div>");
-    $("#bottoms").html("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
-    $("#bottoms").html("<img class='text-center' src='images/girlPants2.png' height='120px' width='auto' ></div>");
-    $("#accessories-1").html("<h4 class='text-center'> Protect yourself from the freezing temps! </h4>");
-    $("#accessories-1").html("<img class='text-center' src='images/scarf1.png' height='120px' width='auto'></div>");
-  } else {
-    alert("Oops");
-  }
+    $("#tops").append("<h4 class='text-center'> Choose a SWEATER like this one: </h4>");
+    $("#tops").append("<img class='text-center' src='images/girlShirt3.png' height='120px' width='auto' ></div>");
+    $("#bottoms").append("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+    $("#bottoms").append("<img class='text-center' src='images/girlPants2.png' height='120px' width='auto' ></div>");
+    $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the freezing temps! </h4>");
+    $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto'></div>");
+
+  } else if ((todayTemps > 80) && (genderClothes === "boy")) {
+  $("#overall-results").text("It'll be a WARM, OVERCAST DAY for you. Be sure to dress in light, short-sleeved shirts and bottoms.");
+  $("#background-img").css("background-image", 'url("images/sunnybackground.jpeg")');
+  $("#character").append("<img id='gender' src='images/boy1-summer.png' height='500px' width='auto'>");
+
+  $("#tops").append("<h4 class='text-center'> Choose a SHORT-SLEEVED top like this one: </h4>");
+  $("#tops").append("<img class='text-center' src='images/boyTshirt1.png' height='120px' width='auto' ></div>");
+  $("#bottoms").append("<h4 class='text-center'> Pick a pair of SHORTS like this one: </h4>");
+  $("#bottoms").append("<img class='text-center' src='images/boyShorts1.png' height='120px' width='auto' ></div>");
+  $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the sun! </h4>");
+  $("#accessories-1").append("<img class='text-center' src='images/girlHat1.png' height='120px' width='auto' ></div>");
+
+} else if ((todayTemps > 60) && (genderClothes === "boy")) {
+  $("#overall-results").text("It'll be a COOLER DAY for you. Be sure to dress in layers, with a long sleeved shirt or a light jacket, with long pants.");
+
+  $("#background-img").css("background-image", 'url("images/fallish.png")');
+  $("#character").append("<img id='gender' src='images/boy2-spring-02.png' height='500px' width='auto'>");
+
+  $("#tops").append("<h4 class='text-center'> Choose a LONG-SLEEVED top like this one: </h4>");
+  $("#tops").append("<img class='text-center' src='images/girlShirt1.png' height='120px' width='auto' ></div>");
+  $("#bottoms").append("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+  $("#bottoms").append("<img class='text-center' src='images/girlPants1.png' height='140px' width='auto' ></div>");
+  $("#accessories-1").append("<h4 class='text-center'> Shield yourself from the cold! </h4>");
+  $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto' ></div>");
+
+} else if ((todayTemps > 0) && (genderClothes === "boy")) {
+  $("#overall-results").text("It will be COLD! Be sure to dress as warm as you can. Pick long-sleeved tops, long pants and throw on a scarf!");
+
+  $("#background-img").css("background-image", 'url("images/winter.jpg")');
+  $("#character").append("<img id='gender' src='images/boy3-winter-02.png' height='500px' width='auto'>");
+
+  $("#tops").append("<h4 class='text-center'> Choose a SWEATER like this one: </h4>");
+  $("#tops").append("<img class='text-center' src='images/girlShirt3.png' height='120px' width='auto' ></div>");
+  $("#bottoms").append("<h4 class='text-center'> Pick a pair of PANTS like this one: </h4>");
+  $("#bottoms").append("<img class='text-center' src='images/girlPants2.png' height='120px' width='auto' ></div>");
+  $("#accessories-1").append("<h4 class='text-center'> Protect yourself from the freezing temps! </h4>");
+  $("#accessories-1").append("<img class='text-center' src='images/scarf1.png' height='120px' width='auto'></div>");
+} else {
+  console.log("Oops");
 }
+}
+
 
 // Function to clear out the right side panel - the clothes choices - should the user want to try a different location
 function getClear() {
@@ -302,4 +341,5 @@ function getClear() {
   $("#bottoms").html(" ");
   $("#accessories-1").html(" ");
   $("#character").html(" ");
+  $("#children").html(" ");
 }
